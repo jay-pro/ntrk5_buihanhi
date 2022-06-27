@@ -70,3 +70,7 @@ D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb\obj\Debug\net6.0
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb\obj\Debug\net6.0\ref\ecommerceweb.dll
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb\obj\Debug\net6.0\ecommerceweb.pdb
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb\obj\Debug\net6.0\ecommerceweb.genruntimeconfig.cache
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb\bin\Debug\net6.0\Microsoft.Extensions.Caching.SqlServer.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb\bin\Debug\net6.0\ecommerceweb.Domain.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb\bin\Debug\net6.0\ecommerceweb.Domain.pdb

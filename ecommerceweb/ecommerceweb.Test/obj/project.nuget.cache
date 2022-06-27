@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "j7OV+WcLDsqQS3vkZErw0c4dxULLLFipQVlGD+b8N6l+eQjDbcAkl6Y+9wf4I4MyRPAMvgrmROPP+Lnxr61pug==",
+  "dgSpecHash": "pmvJ7/Ragz70n6uLF6sspwxul7w7yHPpQT/VWrWiEepT3YyF+truUVfPTa86i/UjA192Y1sy9ixqyubILb/vAw==",
   "success": true,
   "projectFilePath": "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.Test\\ecommerceweb.Test.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.6\\microsoft.entityframeworkcore.design.6.0.6.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.6\\microsoft.entityframeworkcore.relational.6.0.6.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.6\\microsoft.entityframeworkcore.sqlserver.6.0.6.nupkg.sha512",
+    "C:\\Users\\buiha\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.6\\microsoft.entityframeworkcore.tools.6.0.6.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.extensions.caching.sqlserver\\6.0.6\\microsoft.extensions.caching.sqlserver.6.0.6.nupkg.sha512",

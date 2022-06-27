@@ -1,4 +1,4 @@
-using ecommerceweb.API.Models;
+using ecommerceweb.SharedModel;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

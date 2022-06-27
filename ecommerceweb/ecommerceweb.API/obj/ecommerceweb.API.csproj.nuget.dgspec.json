@@ -57,7 +57,17 @@
               "target": "Package",
               "version": "[6.0.6, )"
             },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.6, )"
             },
@@ -146,7 +156,17 @@
               "target": "Package",
               "version": "[6.0.6, )"
             },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.6, )"
             },
@@ -213,7 +233,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.Domain\\ecommerceweb.Domain.csproj": {
+                "projectPath": "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.Domain\\ecommerceweb.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -232,7 +256,17 @@
               "target": "Package",
               "version": "[6.0.6, )"
             },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.6, )"
             },

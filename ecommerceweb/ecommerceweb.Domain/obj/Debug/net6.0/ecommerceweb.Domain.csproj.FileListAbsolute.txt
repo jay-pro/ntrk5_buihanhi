@@ -1,0 +1,15 @@
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\bin\Debug\net6.0\ecommerceweb.Domain.deps.json
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\bin\Debug\net6.0\ecommerceweb.Domain.runtimeconfig.json
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\bin\Debug\net6.0\ecommerceweb.Domain.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\bin\Debug\net6.0\ref\ecommerceweb.Domain.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\bin\Debug\net6.0\ecommerceweb.Domain.pdb
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\obj\Debug\net6.0\ecommerceweb.Domain.csproj.AssemblyReference.cache
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\obj\Debug\net6.0\ecommerceweb.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\obj\Debug\net6.0\ecommerceweb.Domain.AssemblyInfoInputs.cache
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\obj\Debug\net6.0\ecommerceweb.Domain.AssemblyInfo.cs
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\obj\Debug\net6.0\ecommerceweb.Domain.csproj.CoreCompileInputs.cache
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\obj\Debug\net6.0\ecommerceweb.Domain.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\obj\Debug\net6.0\ref\ecommerceweb.Domain.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\obj\Debug\net6.0\ecommerceweb.Domain.pdb
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\obj\Debug\net6.0\ecommerceweb.Domain.genruntimeconfig.cache
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Domain\bin\Debug\net6.0\appsettings.json

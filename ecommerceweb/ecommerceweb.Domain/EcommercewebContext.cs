@@ -7,8 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ecommerceweb.Domain;
 
-namespace ecommerceweb.API.Models
+namespace ecommerceweb.Share
 {
     public class EcommercewebContext : DbContext
     {

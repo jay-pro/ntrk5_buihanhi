@@ -10,3 +10,9 @@ D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.SharedModel\obj\
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.SharedModel\obj\Debug\net6.0\ecommerceweb.SharedModel.dll
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.SharedModel\obj\Debug\net6.0\ref\ecommerceweb.SharedModel.dll
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.SharedModel\obj\Debug\net6.0\ecommerceweb.SharedModel.pdb
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.SharedModel\bin\Debug\net6.0\ecommerceweb.SharedModel.runtimeconfig.json
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.SharedModel\obj\Debug\net6.0\ecommerceweb.SharedModel.genruntimeconfig.cache
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.SharedModel\bin\Debug\net6.0\appsettings.json
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.SharedModel\bin\Debug\net6.0\ecommerceweb.Domain.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.SharedModel\bin\Debug\net6.0\ecommerceweb.Domain.pdb
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.SharedModel\obj\Debug\net6.0\ecommerceweb.SharedModel.csproj.CopyComplete
