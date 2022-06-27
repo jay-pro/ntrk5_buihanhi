@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kaFkZEpMl5/Br6uWdruoDg2Y5Q6xxZaERPL6SkduvloaxBjdkAj+cmnTlGP+e67Xmgug6RRNpkbiUA3DU3a+/g==",
+  "dgSpecHash": "4BG9A+Dwra8r5cTduy7bUIhgx4h/4zhsqs9CwHGTRcRB/haMJWHki5jCSsVDJqXLTViMIqPNj47zhnqM4yqQIA==",
   "success": true,
   "projectFilePath": "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.API\\ecommerceweb.API.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,7 @@
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
-    "C:\\Users\\buiha\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\buiha\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.1\\microsoft.extensions.logging.abstractions.6.0.1.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
