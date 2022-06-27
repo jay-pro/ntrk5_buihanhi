@@ -1,7 +1,12 @@
+using ecommerceweb.API.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-//builder.Services.AddDbContext<EcommercewebContext>(o=>o.Use)
+var connectionString = builder.Configuration.GetConnectionString("EcommercewebAppDb");
+builder.Services.AddDbContext<EcommercewebContext>(x => x.UseSqlServer(connectionString));
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

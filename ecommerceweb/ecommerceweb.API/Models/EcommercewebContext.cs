@@ -22,6 +22,22 @@ namespace ecommerceweb.API.Models
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        var configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json")
+            .Build();
+
+        var connectionString = configuration.GetConnectionString("EcommercewebAppDb");
+        optionsBuilder.UseSqlServer(connectionString);
+    }
+
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder) => modelBuilder.Entity<Product>()
+            .Property(q => q.Name)
+            .HasColumnName("FullName");
+
+    /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
         optionsBuilder.UseSqlServer(
             "Data Source=DESKTOP-AB57MQ4\\SQLEXPRESS;Initial Catalog=EcommercewebAppDb;Integrated Security=True")
             .UseLazyLoadingProxies()
@@ -41,5 +57,5 @@ namespace ecommerceweb.API.Models
         modelBuilder.Entity<Product>()
             .Property(q => q.Name)
             .HasColumnName("FullName");
-    }
+    }*/
 }
