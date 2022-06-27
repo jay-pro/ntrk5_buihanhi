@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "63e021d8-b981-4491-9b08-e1d37dd6ce14": {
+      "ProjectGuid": "63e021d8-b981-4491-9b08-e1d37dd6ce14",
+      "DisplayName": "ecommerceweb",
+      "ColorIndex": 0
+    },
+    "02b26795-0191-487e-8a51-ed1ee507df6b": {
+      "ProjectGuid": "02b26795-0191-487e-8a51-ed1ee507df6b",
+      "DisplayName": "ecommerceweb.Domain",
+      "ColorIndex": 1
+    },
+    "6759a34a-0118-41a9-9661-44bc0bdc546a": {
+      "ProjectGuid": "6759a34a-0118-41a9-9661-44bc0bdc546a",
+      "DisplayName": "ecommerceweb.Domain",
+      "ColorIndex": 2
+    },
+    "86487241-8fea-415d-9508-379816a72d1b": {
+      "ProjectGuid": "86487241-8fea-415d-9508-379816a72d1b",
+      "DisplayName": "ecommerceweb.API",
+      "ColorIndex": 3
+    },
+    "281a947b-8071-4193-bd31-7dab27290d6a": {
+      "ProjectGuid": "281a947b-8071-4193-bd31-7dab27290d6a",
+      "DisplayName": "ecommerceweb.Admin",
+      "ColorIndex": 4
+    },
+    "71e96ebc-60c4-43b7-bd4e-3ac23d837474": {
+      "ProjectGuid": "71e96ebc-60c4-43b7-bd4e-3ac23d837474",
+      "DisplayName": "ecommerceweb.API",
+      "ColorIndex": 5
+    },
+    "337e3734-d0bb-455b-bf08-ee3d58b7f6ef": {
+      "ProjectGuid": "337e3734-d0bb-455b-bf08-ee3d58b7f6ef",
+      "DisplayName": "ecommerceweb.SharedModel",
+      "ColorIndex": 6
+    },
+    "97bcda6b-f7e0-45e2-8dc2-bd00b4f42a31": {
+      "ProjectGuid": "97bcda6b-f7e0-45e2-8dc2-bd00b4f42a31",
+      "DisplayName": "ecommerceweb.Domain",
+      "ColorIndex": 7
+    },
+    "84dbcf18-ce9d-465b-b915-ac6e0cbf04f2": {
+      "ProjectGuid": "84dbcf18-ce9d-465b-b915-ac6e0cbf04f2",
+      "DisplayName": "ecommerceweb.Test",
+      "ColorIndex": 8
+    }
+  },
+  "NextColorIndex": 9
+}
