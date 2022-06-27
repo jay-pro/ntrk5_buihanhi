@@ -220,6 +220,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.Domain\\ecommerceweb.Domain.csproj": {
+                "projectPath": "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.Domain\\ecommerceweb.Domain.csproj"
+              },
               "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.SharedModel\\ecommerceweb.SharedModel.csproj": {
                 "projectPath": "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.SharedModel\\ecommerceweb.SharedModel.csproj"
               }

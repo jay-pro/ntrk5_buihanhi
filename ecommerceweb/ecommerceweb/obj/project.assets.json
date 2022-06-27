@@ -2755,6 +2755,7 @@
       "Microsoft.Extensions.Logging >= 6.0.0",
       "Microsoft.Extensions.Logging.Abstractions >= 6.0.1",
       "Microsoft.Extensions.Logging.Configuration >= 6.0.0",
+      "ecommerceweb.Domain >= 1.0.0",
       "ecommerceweb.SharedModel >= 1.0.0"
     ]
   },
@@ -2785,6 +2786,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.Domain\\ecommerceweb.Domain.csproj": {
+              "projectPath": "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.Domain\\ecommerceweb.Domain.csproj"
+            },
             "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.SharedModel\\ecommerceweb.SharedModel.csproj": {
               "projectPath": "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.SharedModel\\ecommerceweb.SharedModel.csproj"
             }
