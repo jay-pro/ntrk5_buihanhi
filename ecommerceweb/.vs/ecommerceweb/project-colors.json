@@ -65,7 +65,17 @@
       "ProjectGuid": "1dece56b-aafb-4dfe-9b3e-77697d15bd9a",
       "DisplayName": "ecommerceweb.Admin",
       "ColorIndex": 11
+    },
+    "34f046e2-1e56-4523-8e5d-5f9e7258d070": {
+      "ProjectGuid": "34f046e2-1e56-4523-8e5d-5f9e7258d070",
+      "DisplayName": "ecommerceweb.API",
+      "ColorIndex": 12
+    },
+    "f2aa1306-e54b-48a9-8403-0c3b27aa9217": {
+      "ProjectGuid": "f2aa1306-e54b-48a9-8403-0c3b27aa9217",
+      "DisplayName": "ecommerceweb.Admin",
+      "ColorIndex": 13
     }
   },
-  "NextColorIndex": 12
+  "NextColorIndex": 14
 }

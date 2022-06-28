@@ -24,3 +24,8 @@ D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\obj\Debu
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\obj\Debug\net6.0\ref\ecommerceweb.Website.dll
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\obj\Debug\net6.0\ecommerceweb.Website.pdb
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\obj\Debug\net6.0\ecommerceweb.Website.genruntimeconfig.cache
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\obj\Debug\net6.0\ecommerceweb.Website.csproj.CopyComplete

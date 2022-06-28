@@ -144,3 +144,4 @@ D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Test\obj\Debug\n
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Test\obj\Debug\net6.0\ref\ecommerceweb.Test.dll
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Test\obj\Debug\net6.0\ecommerceweb.Test.pdb
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Test\obj\Debug\net6.0\ecommerceweb.Test.genruntimeconfig.cache
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Test\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
