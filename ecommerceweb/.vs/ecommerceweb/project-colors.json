@@ -50,7 +50,22 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "9b5ef2b5-acef-4458-ba56-5c2a5777fa17": {
+      "ProjectGuid": "9b5ef2b5-acef-4458-ba56-5c2a5777fa17",
+      "DisplayName": "ecommerceweb.APIs",
+      "ColorIndex": 9
+    },
+    "364d1f1f-aa59-46df-9227-e7ab2f7fb914": {
+      "ProjectGuid": "364d1f1f-aa59-46df-9227-e7ab2f7fb914",
+      "DisplayName": "ecommerceweb.Website",
+      "ColorIndex": 10
+    },
+    "1dece56b-aafb-4dfe-9b3e-77697d15bd9a": {
+      "ProjectGuid": "1dece56b-aafb-4dfe-9b3e-77697d15bd9a",
+      "DisplayName": "ecommerceweb.Admin",
+      "ColorIndex": 11
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 12
 }
