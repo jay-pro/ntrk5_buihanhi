@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ecommerceweb.Website", "eco
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ecommerceweb.API", "ecommerceweb.API\ecommerceweb.API.csproj", "{34F046E2-1E56-4523-8E5D-5F9E7258D070}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecommerceweb.Admin", "ecommerceweb.Admin\ecommerceweb.Admin.csproj", "{F2AA1306-E54B-48A9-8403-0C3B27AA9217}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ecommerceweb.Admin", "ecommerceweb.Admin\ecommerceweb.Admin.csproj", "{F2AA1306-E54B-48A9-8403-0C3B27AA9217}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

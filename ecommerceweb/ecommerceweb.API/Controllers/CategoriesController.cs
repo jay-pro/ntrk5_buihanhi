@@ -1,6 +1,7 @@
 ﻿using ecommerceweb.API.Data;
 using ecommerceweb.API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ecommerceweb.API.Controllers
 {
@@ -14,17 +15,19 @@ namespace ecommerceweb.API.Controllers
             this.dbContext = dbContext;
         }
 
+        //Get all categories
         [HttpGet]
-        public IActionResult GetCategories()
+        public async Task<IActionResult> GetCategories()
         {
-            return Ok(dbContext.Categories.ToList());
+            return Ok(await dbContext.Categories.ToListAsync());
         }
 
+        //Get a category's details
         [HttpGet]
-        [Route("{id:guid}")]
-        public async Task<IActionResult> GetCategory([FromRoute] Guid id)
+        [Route("{CategoryId:int}")]//Guid
+        public async Task<IActionResult> GetCategory([FromRoute] int CategoryId)//Guid
         {
-            var category = await dbContext.Categories.FindAsync(id);
+            var category = await dbContext.Categories.FindAsync(CategoryId);
             if (category != null)
             {
                 return NotFound();
@@ -32,16 +35,33 @@ namespace ecommerceweb.API.Controllers
             return Ok(category);
         }
 
-
+        //Create a category
         [HttpPost]
         public async Task<IActionResult> AddCategoryAsync(AddCategoryRequest addCategoryRequest)
         {
             var category = new Category()
             {
-                Id = Guid.NewGuid(),
+                //CategoryId = Guid.NewGuid(),
+                //CategoryId = addCategoryRequest.CategoryId,
                 CategoryName = addCategoryRequest.CategoryName,
-                Description = addCategoryRequest.Description
+                Description = addCategoryRequest.Description,
+                ParentId = addCategoryRequest.ParentId,
+                Levels = addCategoryRequest.Levels,
+                Ordering = addCategoryRequest.Ordering,
+                Published = addCategoryRequest.Published,
+                Thumb = addCategoryRequest.Thumb,
+                Title = addCategoryRequest.Title,
+                Alias = addCategoryRequest.Alias,
+                MetaDesc = addCategoryRequest.MetaDesc,
+                MetaKey = addCategoryRequest.MetaKey,
+                Cover = addCategoryRequest.Cover,
+                SchemaMarkup = addCategoryRequest.SchemaMarkup
+                //,Images = addCategoryRequest.Images
             };
+            if(category.CategoryName ==" ")
+            {
+                return NotFound();
+            }
 
             await dbContext.Categories.AddAsync(category);
             await dbContext.SaveChangesAsync();
@@ -51,15 +71,26 @@ namespace ecommerceweb.API.Controllers
 
 
         [HttpPut]
-        [Route("{id:guid}")]
-        public async Task<IActionResult> UpdateCategory([FromRoute] Guid id, UpdateCategoryRequest updateCategoryRequest)
+        [Route("{CategoryId:int}")]//Guid
+        public async Task<IActionResult> UpdateCategory([FromRoute] int CategoryId, UpdateCategoryRequest updateCategoryRequest)//Guid
         {
-            var category = await dbContext.Categories.FindAsync(id);
+            var category = await dbContext.Categories.FindAsync(CategoryId);
             if(category != null)
             {
                 category.CategoryName = updateCategoryRequest.CategoryName;
                 category.Description = updateCategoryRequest.Description;
-                category.Images = updateCategoryRequest.Images;
+                category.ParentId = updateCategoryRequest.ParentId;
+                category.Levels = updateCategoryRequest.Levels;
+                category.Ordering = updateCategoryRequest.Ordering;
+                category.Published = updateCategoryRequest.Published;
+                category.Thumb = updateCategoryRequest.Thumb;
+                category.Title = updateCategoryRequest.Title;
+                category.Alias = updateCategoryRequest.Alias;
+                category.MetaDesc = updateCategoryRequest.MetaDesc;
+                category.MetaKey = updateCategoryRequest.MetaKey;
+                category.Cover = updateCategoryRequest.Cover;
+                category.SchemaMarkup = updateCategoryRequest.SchemaMarkup;
+                //,Images = addCategoryRequest.Images;
 
                 await dbContext.SaveChangesAsync();
                 return Ok(category);
@@ -69,10 +100,10 @@ namespace ecommerceweb.API.Controllers
 
 
         [HttpDelete]
-        [Route("{id:guid}")]
-        public async Task<IActionResult> DeleteCategory([FromRoute] Guid id)
+        [Route("{CategoryId:int}")]
+        public async Task<IActionResult> DeleteCategory([FromRoute] int CategoryId)//Guid
         {
-            var Category = await dbContext.Categories.FindAsync(id);
+            var Category = await dbContext.Categories.FindAsync(CategoryId);
             if (Category != null)
             {
                 dbContext.Remove(Category);

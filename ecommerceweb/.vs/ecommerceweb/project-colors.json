@@ -75,7 +75,12 @@
       "ProjectGuid": "f2aa1306-e54b-48a9-8403-0c3b27aa9217",
       "DisplayName": "ecommerceweb.Admin",
       "ColorIndex": 13
+    },
+    "75d7e4fa-6185-447f-aaf3-966793850798": {
+      "ProjectGuid": "75d7e4fa-6185-447f-aaf3-966793850798",
+      "DisplayName": "nhap",
+      "ColorIndex": 14
     }
   },
-  "NextColorIndex": 14
+  "NextColorIndex": 15
 }

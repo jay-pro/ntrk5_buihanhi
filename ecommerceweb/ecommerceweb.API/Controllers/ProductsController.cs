@@ -1,6 +1,7 @@
 ﻿using ecommerceweb.API.Data;
 using ecommerceweb.API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ecommerceweb.API.Controllers
 {
@@ -8,17 +9,30 @@ namespace ecommerceweb.API.Controllers
     [Route("api/[controller]")]
     public class ProductsController : Controller
     {
-        private readonly APIDbContext dbContext;
+        private readonly APIDbContext _context;
         public ProductsController(APIDbContext dbContext)
         {
-            this.dbContext = dbContext;
+            this._context = dbContext;
         }
 
-        //Get all products
+        //Admin Get all products
         [HttpGet]
-        public IActionResult GetProducts()
+        public async Task<IActionResult> GetProducts()
         {
-            return Ok(dbContext.Products.ToList());
+            return Ok(await _context.Products.ToListAsync());
+        }
+
+        //Get a product's details
+        [HttpGet]
+        [Route("{ProductId:int}")]//Guid
+        public async Task<IActionResult> GetProduct([FromRoute] int ProductId)//Guid
+        {
+            var product = await _context.Products.FindAsync(ProductId);
+            if (product != null)
+            {
+                return NotFound();
+            }
+            return Ok(product);
         }
 
         //Create a product
@@ -27,69 +41,80 @@ namespace ecommerceweb.API.Controllers
         {
             var Product = new Product()
             {
-                Id = Guid.NewGuid(),
+                //ProductId = Guid.NewGuid(),
+                //ProductId = addProductRequest.ProductId,
                 ProductName = addProductRequest.ProductName,
+                ShortDesc = addProductRequest.ShortDesc,
                 Description = addProductRequest.Description,
-                Ratings = addProductRequest.Ratings,
+                //CategoryId = addProductRequest.CategoryId,
                 Price = addProductRequest.Price,
+                Discount = addProductRequest.Discount,
+                Thumb = addProductRequest.Thumb,
                 Images = addProductRequest.Images,
                 CreatedDate = addProductRequest.CreatedDate,
-                SoldsNumb = addProductRequest.SoldsNumb,
-                WarehousesNumb = addProductRequest.WarehousesNumb
+                ModifiedDate = addProductRequest.ModifiedDate,
+                BestSellers = addProductRequest.BestSellers,
+                HomeFlag = addProductRequest.HomeFlag,
+                Active = addProductRequest.Active,
+                Tags = addProductRequest.Tags,
+                Title = addProductRequest.Title,
+                Alias = addProductRequest.Alias,
+                MetaDesc = addProductRequest.MetaDesc,
+                MetaKey = addProductRequest.MetaKey,
+                UnitsInStock = addProductRequest.UnitsInStock
             };
 
-            await dbContext.Products.AddAsync(Product);
-            await dbContext.SaveChangesAsync();
+            await _context.Products.AddAsync(Product);
+            await _context.SaveChangesAsync();
 
             return Ok(Product);
         }
 
         //Update a product
         [HttpPut]
-        [Route("{id:guid}")]
-        public async Task<IActionResult> UpdateProduct([FromRoute] Guid id, UpdateProductRequest updateProductRequest)
+        [Route("{ProductId:int}")]//Guid
+        public async Task<IActionResult> UpdateProduct([FromRoute] int ProductId, UpdateProductRequest updateProductRequest)//Guid
         {
-            var Product = await dbContext.Products.FindAsync(id);
+            var Product = await _context.Products.FindAsync(ProductId);
             if (Product != null)
             {
                 Product.ProductName = updateProductRequest.ProductName;
+                Product.ProductName = updateProductRequest.ProductName;
+                Product.ShortDesc = updateProductRequest.ShortDesc;
                 Product.Description = updateProductRequest.Description;
-                Product.Ratings = updateProductRequest.Ratings;
+                //Product.CategoryId = updateProductRequest.CategoryId;
                 Product.Price = updateProductRequest.Price;
+                Product.Discount = updateProductRequest.Discount;
+                Product.Thumb = updateProductRequest.Thumb;
                 Product.Images = updateProductRequest.Images;
                 Product.CreatedDate = updateProductRequest.CreatedDate;
-                Product.SoldsNumb = updateProductRequest.SoldsNumb;
-                Product.WarehousesNumb = updateProductRequest.WarehousesNumb;
+                Product.ModifiedDate = updateProductRequest.ModifiedDate;
+                Product.BestSellers = updateProductRequest.BestSellers;
+                Product.HomeFlag = updateProductRequest.HomeFlag;
+                Product.Active = updateProductRequest.Active;
+                Product.Tags = updateProductRequest.Tags;
+                Product.Title = updateProductRequest.Title;
+                Product.Alias = updateProductRequest.Alias;
+                Product.MetaDesc = updateProductRequest.MetaDesc;
+                Product.MetaKey = updateProductRequest.MetaKey;
+                Product.UnitsInStock = updateProductRequest.UnitsInStock;
 
-                await dbContext.SaveChangesAsync();
+                await _context.SaveChangesAsync();
                 return Ok(Product);
             }
             return NotFound();
         }
 
-        //Get a product's details
-        [HttpGet]
-        [Route("{id:guid}")]
-        public async Task<IActionResult> GetProduct([FromRoute] Guid id)
-        {
-            var product = await dbContext.Products.FindAsync(id);
-            if(product != null)
-            {
-                return NotFound();
-            }
-            return Ok(product);
-        }
-
         //Delete a product
         [HttpDelete]
-        [Route("{id:guid}")]
-        public async Task<IActionResult> DeleteProduct([FromRoute] Guid id)
+        [Route("{ProductId:int}")]//Guid
+        public async Task<IActionResult> DeleteProduct([FromRoute] int ProductId)//Guid
         {
-            var product = await dbContext.Products.FindAsync(id);
+            var product = await _context.Products.FindAsync(ProductId);
             if(product != null)
             {
-                dbContext.Remove(product);
-                await dbContext.SaveChangesAsync();
+                _context.Remove(product);
+                await _context.SaveChangesAsync();
                 return Ok(product);
             }
             return NotFound();
