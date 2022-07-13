@@ -3,36 +3,21 @@ using ecommerceweb.Website.Models.Context;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Diagnostics;
 using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace ecommerceweb.Website.Controllers
 {
-    public class HomeController : Controller
+    public class CategoryController : Controller
     {
         string baseUrl = "https://localhost:44303";
 
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<CategoryController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public CategoryController(ILogger<CategoryController> logger)
         {
             _logger = logger;
-        }
-
-       /* public IActionResult Index()
-        {
-            return View();
-        }*/
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
         //Get all categories
@@ -56,6 +41,6 @@ namespace ecommerceweb.Website.Controllers
 
                 return View(categories);
             }
-        }     
+        }
     }
 }

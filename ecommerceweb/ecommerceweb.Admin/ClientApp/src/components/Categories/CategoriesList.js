@@ -71,10 +71,11 @@ const CategoriesList = (props) => {
   };
 
   const deleteCategory = (rowIndex) => {
-    const categoryId = categoriesRef.current[rowIndex].categoryId;
-    CategoryService.remove(categoryId)
+    // const categoryId = categoriesRef.current[rowIndex].categoryId;
+    console.log(rowIndex);
+    CategoryService.remove(rowIndex)
       .then((response) => {
-        props.history.push("/Categories/");
+        //props.history.push("/Categorieslist/");
         let newCategories = [...categoriesRef.current];
         newCategories.splice(rowIndex, 1);
         setCategories(newCategories);
@@ -98,23 +99,27 @@ const CategoriesList = (props) => {
         Header: "Description",
         accessor: "description",
       },
-      {
+      /* {
         Header: "Public",
         accessor: "published",
         Cell: (props) => {
           return props.value ? "true" : "false";
         },
-      },
+      }, */
       {
         Header: "Actions",
         accessor: "actions",
         Cell: (props) => {
-          const rowIdx = props.row.categoryId;
+          const rowIdx = props.row.original.categoryId;
+          // console.log(rowIdx);
           return (
             <div>
-              <span onClick={() => openCategory(rowIdx)}>
+              <Link to={`${rowIdx}`}>
                 <i className="far fa-edit action mr-2"></i>
-              </span>
+              </Link>
+              {/* <span onClick={() => openCategory(rowIdx)}>
+                <i className="far fa-edit action mr-2"></i>
+              </span> */}
               <span onClick={() => deleteCategory(rowIdx)}>
                 <i className="fas fa-trash action"></i>
               </span>

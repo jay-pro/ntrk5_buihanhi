@@ -7,7 +7,7 @@
             Orders = new HashSet<Order>();
         }
 
-        public Guid TransactStatusId { get; set; }
+        public int TransactStatusId { get; set; }
         public string? Status { get; set; }
         public string? Description { get; set; }
 

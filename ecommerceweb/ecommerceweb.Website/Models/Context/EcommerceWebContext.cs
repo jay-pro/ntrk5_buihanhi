@@ -18,18 +18,15 @@ namespace ecommerceweb.Website.Models.Context
         public virtual DbSet<Location> Locations { get; set; } = null!;
         public virtual DbSet<Order> Orders { get; set; } = null!;
         public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
-        public virtual DbSet<Page> Pages { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;
-        public virtual DbSet<Advertisement> Advertisements { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
-        public virtual DbSet<Article> Articles { get; set; } = null!;
         public virtual DbSet<TransactStatus> TransactStatuses { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-AB57MQ4;Database=newEcommercewebMVC;Integrated Security=true;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-AB57MQ4;Database=newEcommercewebAPI;Integrated Security=true;");
             }
         }
 
@@ -38,7 +35,6 @@ namespace ecommerceweb.Website.Models.Context
             modelBuilder.Entity<Account>(entity =>
             {
                 entity.Property(e => e.AccountId).HasColumnName("AccountID");
-                //entity.Property(e => e.Active)
                 entity.Property(e => e.UserName).HasMaxLength(50);
                 entity.Property(e => e.FullName).HasMaxLength(150);
                 entity.Property(e => e.Email).HasMaxLength(50);
@@ -53,64 +49,23 @@ namespace ecommerceweb.Website.Models.Context
                 entity.HasOne(d => d.Role).WithMany(p => p.Accounts).HasForeignKey(d => d.RoleId).HasConstraintName("FK_Accounts_Roles");
             });
 
-            modelBuilder.Entity<Advertisement>(entity =>
-            {
-                entity.Property(e => e.AdvertisementId).HasColumnName("AdvertisementID");
-                entity.Property(e => e.SubTitle).HasMaxLength(150);
-                entity.Property(e => e.Title).HasMaxLength(150);
-                entity.Property(e => e.ImageBg).HasMaxLength(250).HasColumnName("ImageBG");
-                entity.Property(e => e.ImageProduct).HasMaxLength(250);
-                entity.Property(e => e.UrlLink).HasMaxLength(250);
-                //entity.Property(e => e.Active)
-                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
-            });
-
-            modelBuilder.Entity<Article>(entity =>
-            {
-                entity.HasKey(e => e.PostId).HasName("PK_tblArticles");
-                entity.Property(e => e.PostId).HasColumnName("PostID");
-                entity.Property(e => e.Title).HasMaxLength(255);
-                entity.Property(e => e.Scontents).HasMaxLength(255).HasColumnName("SContents");
-                entity.Property(e => e.Contents).HasMaxLength(255);
-                entity.Property(e => e.Thumb).HasMaxLength(255);
-                //entity.Property(e => e.Published)
-                entity.Property(e => e.Alias).HasMaxLength(255);
-                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
-                entity.Property(e => e.Author).HasMaxLength(255);
-                entity.Property(e => e.AccountId).HasColumnName("AccountID");
-                entity.Property(e => e.Tags).HasMaxLength(255);
-                entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
-                //entity.Property(e => e.IsHot).HasColumnName("isHot");
-                //entity.Property(e => e.IsNewfeed).HasColumnName("isNewfeed");
-                entity.Property(e => e.MetaKey).HasMaxLength(255);
-                entity.Property(e => e.MetaDesc).HasMaxLength(255);
-                //entity.Property(e => e.Views)
-            });
-
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.HasKey(e => e.CategoryId);
                 entity.Property(e => e.CategoryId).HasColumnName("CatID");
                 entity.Property(e => e.CategoryName).HasMaxLength(250);
-                //entity.Property(e => e.Description)
                 entity.Property(e => e.ParentId).HasColumnName("ParentID");
-                //entity.Property(e => e.Levels)
-                //entity.Property(e => e.Ordering)
-                //entity.Property(e => e.Published)
                 entity.Property(e => e.Thumb).HasMaxLength(250);
                 entity.Property(e => e.Title).HasMaxLength(250);
                 entity.Property(e => e.Alias).HasMaxLength(250);
                 entity.Property(e => e.MetaDesc).HasMaxLength(250);
                 entity.Property(e => e.MetaKey).HasMaxLength(250);
                 entity.Property(e => e.Cover).HasMaxLength(255);
-                //entity.Property(e => e.SchemaMarkup)
             });
 
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
-                //entity.Property(e => e.Active)
-                //entity.Property(e => e.UserName).HasMaxLength(50);
                 entity.Property(e => e.FullName).HasMaxLength(255);
                 entity.Property(e => e.Email).HasMaxLength(150).IsFixedLength();
                 entity.Property(e => e.Password).HasMaxLength(50);
@@ -119,8 +74,6 @@ namespace ecommerceweb.Website.Models.Context
                 entity.Property(e => e.Avatar).HasMaxLength(255);
                 entity.Property(e => e.Salt).HasMaxLength(8).IsFixedLength();
                 entity.Property(e => e.LocationId).HasColumnName("LocationID");
-                //entity.Property(e => e.District)
-                //entity.Property(e => e.Ward)
                 entity.Property(e => e.CreatedDate).HasColumnType("datetime");
                 entity.Property(e => e.LastLogin).HasColumnType("datetime");
                 entity.Property(e => e.Birthday).HasColumnType("datetime");
@@ -131,8 +84,6 @@ namespace ecommerceweb.Website.Models.Context
             {
                 entity.Property(e => e.LocationId).ValueGeneratedNever().HasColumnName("LocationID");
                 entity.Property(e => e.Name).HasMaxLength(50);
-                //entity.Property(e => e.Parent)
-                //entity.Property(e => e.Levels)
                 entity.Property(e => e.Slug).HasMaxLength(100);
                 entity.Property(e => e.NameWithType).HasMaxLength(100);
                 entity.Property(e => e.Type).HasMaxLength(10);
@@ -146,15 +97,8 @@ namespace ecommerceweb.Website.Models.Context
                 entity.Property(e => e.ShipDate).HasColumnType("datetime");
                 entity.Property(e => e.PaymentDate).HasColumnType("datetime");
                 entity.Property(e => e.TransactStatusId).HasColumnName("TransactStatusID");
-                //entity.Property(e => e.Deleted)
-                //entity.Property(e => e.Paid)
-                //entity.Property(e => e.TotalMoney)
                 entity.Property(e => e.PaymentId).HasColumnName("PaymentID");
-                //entity.Property(e => e.Note)
-                //entity.Property(e => e.Address)
                 entity.Property(e => e.LocationId).HasColumnName("LocationID");
-                //entity.Property(e => e.District)
-                //entity.Property(e => e.Ward)
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CustomerId)
@@ -180,18 +124,6 @@ namespace ecommerceweb.Website.Models.Context
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.ProductId)
                     .HasConstraintName("FK_OrderDetails_Products");
-            });
-
-            modelBuilder.Entity<Page>(entity =>
-            {
-                entity.Property(e => e.PageId).HasColumnName("PageID");
-                entity.Property(e => e.PageName).HasMaxLength(250);
-                entity.Property(e => e.Thumb).HasMaxLength(250);
-                entity.Property(e => e.Title).HasMaxLength(250);
-                entity.Property(e => e.MetaDesc).HasMaxLength(250);
-                entity.Property(e => e.MetaKey).HasMaxLength(250);
-                entity.Property(e => e.Alias).HasMaxLength(250);
-                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
             });
 
             modelBuilder.Entity<Product>(entity =>

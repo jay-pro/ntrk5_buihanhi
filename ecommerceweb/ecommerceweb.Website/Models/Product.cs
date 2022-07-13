@@ -4,15 +4,14 @@
     {
         public Product()
         {
-            //AttributesPrices = new HashSet<AttributesPrice>();
             OrderDetails = new HashSet<OrderDetail>();
         }
 
-        public Guid ProductId { get; set; }
+        public int ProductId { get; set; }
         public string ProductName { get; set; } = null!;
         public string? ShortDesc { get; set; }
         public string? Description { get; set; }
-        public Guid? CategoryId { get; set; }
+        public int? CategoryId { get; set; }
         public int? Price { get; set; }
         public int? Discount { get; set; }
         public string? Thumb { get; set; }
@@ -30,7 +29,6 @@
         public int? UnitsInStock { get; set; }
 
         public virtual Category? Cat { get; set; }
-        //public virtual ICollection<AttributesPrice> AttributesPrices { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

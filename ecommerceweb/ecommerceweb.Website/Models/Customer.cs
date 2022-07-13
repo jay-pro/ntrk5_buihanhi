@@ -7,7 +7,7 @@
             Orders = new HashSet<Order>();
         }
 
-        public Guid CustomerId { get; set; }
+        public int CustomerId { get; set; }
         public bool Active { get; set; }
         public string? UserName { get; set; }
         public string? FullName { get; set; }
@@ -17,7 +17,7 @@
         public string? Address { get; set; }
         public string? Avatar { get; set; }
         public string? Salt { get; set; }
-        public Guid? LocationId { get; set; }
+        public int? LocationId { get; set; }
         public int? District { get; set; }
         public int? Ward { get; set; }
         public DateTime? CreatedDate { get; set; }

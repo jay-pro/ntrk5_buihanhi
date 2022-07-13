@@ -7,7 +7,7 @@
             Customers = new HashSet<Customer>();
         }
 
-        public Guid LocationId { get; set; }
+        public int LocationId { get; set; }
         public string? Name { get; set; }
         public int? Parent { get; set; }
         public int? Levels { get; set; }

@@ -77,3 +77,6 @@ D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\bin\Debu
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.Views.dll
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website\bin\Debug\net6.0\System.Web.Http.dll

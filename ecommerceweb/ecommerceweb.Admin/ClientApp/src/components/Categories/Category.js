@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import CategoryService from "../../services/CategoryService";
 
 const Category = props => {
-  //const { CategoryId }= useParams();
+  const { CategoryId }= useParams();
   let navigate = useNavigate();
   const initialCategoryState = {
     CategoryId: null,
@@ -41,10 +41,10 @@ const Category = props => {
     getCategory(props.match.params.CategoryId);
   }, [props.match.params.CategoryId]);
 
-  /* useEffect(() => {
+  useEffect(() => {
     if (CategoryId)
       getCategory(CategoryId);
-  }, [CategoryId]); */
+  }, [CategoryId]);
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -72,7 +72,7 @@ const Category = props => {
 
     CategoryService.update(currentCategory.categoryId, data)
       .then(response => {
-        setCurrentCategory({ ...currentCategory, published: status });
+        setCurrentCategory({ ...currentCategory , published: status });
         console.log(response.data);
         setMessage("Successfully updated");
       })
@@ -96,7 +96,7 @@ const Category = props => {
       .then(response => {
         console.log(response.data);
         props.history.push("/categorieslist/")
-        //navigate("/categorieslist");
+        navigate("/categorieslist");
       })
       .catch(e => {
         console.log(e);
@@ -118,7 +118,7 @@ const Category = props => {
                 //required
                 value={currentCategory.categoryName}
                 onChange={handleInputChange}
-                name="name"
+                name="categoryName"
               />
             </div> 
             <div className="form-group">
@@ -128,7 +128,7 @@ const Category = props => {
                 className="form-control"
                 id="description"
                 //required
-                value={currentCategory.description}
+                //value={currentCategory.description}
                 onChange={handleInputChange}
                 name="description"
               />
@@ -140,7 +140,7 @@ const Category = props => {
                 className="form-control"
                 id="parentId"
                 //required
-                value={currentCategory.parentId}
+                //value={currentCategory.parentId}
                 onChange={handleInputChange}
                 name="parentId"
               />
@@ -152,7 +152,7 @@ const Category = props => {
                 className="form-control"
                 id="levels"
                 //required
-                value={currentCategory.levels}
+                //value={currentCategory.levels}
                 onChange={handleInputChange}
                 name="levels"
               />
@@ -164,7 +164,7 @@ const Category = props => {
                 className="form-control"
                 id="ordering"
                 //required
-                value={currentCategory.ordering}
+                //value={currentCategory.ordering}
                 onChange={handleInputChange}
                 name="ordering"
               />
@@ -176,7 +176,7 @@ const Category = props => {
                 className="form-control"
                 id="thumb"
                 //required
-                value={currentCategory.thumb}
+                //value={currentCategory.thumb}
                 onChange={handleInputChange}
                 name="thumb"
               />
@@ -188,7 +188,7 @@ const Category = props => {
                 className="form-control"
                 id="title"
                 //required
-                value={currentCategory.title}
+                //value={currentCategory.title}
                 onChange={handleInputChange}
                 name="title"
               />
@@ -200,7 +200,7 @@ const Category = props => {
                 className="form-control"
                 id="alias"
                 //required
-                value={currentCategory.Alias}
+                //value={currentCategory.Alias}
                 onChange={handleInputChange}
                 name="alias"
               />
@@ -212,7 +212,7 @@ const Category = props => {
                 className="form-control"
                 id="metaDesc"
                 //required
-                value={currentCategory.metaDesc}
+                //value={currentCategory.metaDesc}
                 onChange={handleInputChange}
                 name="metaDesc"
               />
@@ -224,7 +224,7 @@ const Category = props => {
                 className="form-control"
                 id="metaKey"
                 //required
-                value={currentCategory.metaKey}
+                //value={currentCategory.metaKey}
                 onChange={handleInputChange}
                 name="metaKey"
               />
@@ -236,7 +236,7 @@ const Category = props => {
                 className="form-control"
                 id="cover"
                 //required
-                value={currentCategory.cover}
+                //value={currentCategory.cover}
                 onChange={handleInputChange}
                 name="cover"
               />
@@ -248,7 +248,7 @@ const Category = props => {
                 className="form-control"
                 id="schemaMarkup"
                 //required
-                value={currentCategory.schemaMarkup}
+                //value={currentCategory.schemaMarkup}
                 onChange={handleInputChange}
                 name="schemaMarkup"
               />
@@ -276,6 +276,7 @@ const Category = props => {
               Publish
             </button>
           )}
+          
           <button className="badge badge-danger mr-2" onClick={deleteCategory}>
             Delete
           </button>

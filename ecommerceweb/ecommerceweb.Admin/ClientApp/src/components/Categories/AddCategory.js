@@ -3,7 +3,7 @@ import CategoryService from '../../services/CategoryService';
 
 const AddCategory = () => {
   const initialCategoryState = {
-    CategoryId: null,
+    categoryId: null,
     CategoryName:"",
     Description: "",
     ParentId: 0,
@@ -100,7 +100,7 @@ const AddCategory = () => {
               required
               value={category.categoryName}
               onChange={handleInputChange}
-              name="name"
+              name="categoryName"
             />
           </div>
           <div className="form-group">
@@ -151,7 +151,7 @@ const AddCategory = () => {
               name="ordering"
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="published">Published</label>
             <input
               type="text"
@@ -162,7 +162,7 @@ const AddCategory = () => {
               onChange={handleInputChange}
               name="published"
             />
-          </div>
+          </div> */}
           <div className="form-group">
             <label htmlFor="thumb">Thumb</label>
             <input
