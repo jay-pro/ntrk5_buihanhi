@@ -27,8 +27,8 @@ namespace ecommerceweb.API.Controllers
         [Route("{ProductId:int}")]//Guid
         public async Task<IActionResult> GetProduct([FromRoute] int ProductId)//Guid
         {
-            var product = await _context.Products.FindAsync(ProductId);
-            if (product != null)
+            var product = await _context.Products.Include(x => x.OrderDetails).FirstOrDefaultAsync(x => x.ProductId == ProductId);
+            if (product == null)
             {
                 return NotFound();
             }
@@ -46,14 +46,14 @@ namespace ecommerceweb.API.Controllers
                 ProductName = addProductRequest.ProductName,
                 ShortDesc = addProductRequest.ShortDesc,
                 Description = addProductRequest.Description,
-                //CategoryId = addProductRequest.CategoryId,
+                CategoryId = addProductRequest.CategoryId,
                 Price = addProductRequest.Price,
                 Discount = addProductRequest.Discount,
                 Thumb = addProductRequest.Thumb,
                 Images = addProductRequest.Images,
                 CreatedDate = addProductRequest.CreatedDate,
                 ModifiedDate = addProductRequest.ModifiedDate,
-                BestSellers = addProductRequest.BestSellers,
+                BestSellers = addProductRequest.BestSellers, 
                 HomeFlag = addProductRequest.HomeFlag,
                 Active = addProductRequest.Active,
                 Tags = addProductRequest.Tags,
@@ -82,7 +82,7 @@ namespace ecommerceweb.API.Controllers
                 Product.ProductName = updateProductRequest.ProductName;
                 Product.ShortDesc = updateProductRequest.ShortDesc;
                 Product.Description = updateProductRequest.Description;
-                //Product.CategoryId = updateProductRequest.CategoryId;
+                Product.CategoryId = updateProductRequest.CategoryId;
                 Product.Price = updateProductRequest.Price;
                 Product.Discount = updateProductRequest.Discount;
                 Product.Thumb = updateProductRequest.Thumb;

@@ -27,8 +27,8 @@ namespace ecommerceweb.API.Controllers
         [Route("{CategoryId:int}")]//Guid
         public async Task<IActionResult> GetCategory([FromRoute] int CategoryId)//Guid
         {
-            var category = await dbContext.Categories.FindAsync(CategoryId);
-            if (category != null)
+            var category = await dbContext.Categories.Include(x => x.Products).FirstOrDefaultAsync(x => x.CategoryId == CategoryId);
+            if (category == null)//!=
             {
                 return NotFound();
             }

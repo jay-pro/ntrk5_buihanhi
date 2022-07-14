@@ -1,53 +1,23 @@
 ﻿@model IEnumerable<ecommerceweb.Website.Models.Product>
-
 @{
     ViewData["Title"] = "Product Page";
 }
-
-<div class="form-horizontal">
-    <hr />
-    <div class="form-group">
-        <table class="table table-responsive" style="width:400px">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProductName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-            </tr>
-            @foreach (var item in Model) {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ProductName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                </tr>
-            }
-        </table>
-    </div>
-</div>
-
-
-@*@model IEnumerable<ecommerceweb.Website.Models.Product>
-
-@{
+@*@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}*@
-
+}
+*@
 
 
 <!-- Begin Main Content Area -->
-@*<main class="main-content">
+<main class="main-content">
+    @*Page Line*@
     <div class="breadcrumb-area breadcrumb-height" data-bg-image="~/assets/images/breadcrumb/bg/1-1-1920x373.jpg">
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col-lg-12">
                     <div class="breadcrumb-item">
-                        <h2 class="breadcrumb-heading">Shop Layout</h2>
+                        <h2 class="breadcrumb-heading">All Products</h2>
                         <ul>
                             <li>
                                 <a href="index.html">Home <i class="pe-7s-angle-right"></i></a>
@@ -59,9 +29,11 @@
             </div>
         </div>
     </div>
+
     <div class="shop-area section-space-y-axis-100">
         <div class="container">
             <div class="row">
+                @*Column 1: refine, filter,color, size, top rate, tags*@
                 <div class="col-lg-3 order-lg-1 order-2 pt-10 pt-lg-0">
                     <div class="sidebar-area">
                         <div class="widgets-searchbox mb-9">
@@ -276,6 +248,7 @@
                     </div>
                 </div>
                 <div class="col-lg-9 order-lg-2 order-1">
+                    @*Column 2: row1: sort*@
                     <div class="product-topbar">
                         <ul>
                             <li class="product-view-wrap">
@@ -310,7 +283,8 @@
                     <div class="tab-content text-charcoal pt-8">
                         <div class="tab-pane fade" id="grid-view" role="tabpanel" aria-labelledby="grid-view-tab">
                             <div class="product-grid-view row">
-                                <div class="col-lg-4 col-sm-6">
+                                @*foreach(var item in Model){
+                                    <div class="col-lg-4 col-sm-6">
                                     <div class="product-item">
                                         <div class="product-img img-zoom-effect">
                                             <a href="single-product.html">
@@ -337,9 +311,9 @@
                                             </div>
                                         </div>
                                         <div class="product-content">
-                                            <a class="product-name" href="single-product.html">Green Vegetable</a>
+                                            <a class="product-name" href="single-product.html">@Html.DisplayFor(modelItem => item.ProductName)</a>
                                             <div class="price-box pb-1">
-                                                <span class="new-price">$80.00</span>
+                                                <span class="new-price">@Html.DisplayFor(modelItem => item.Price)</span>
                                             </div>
                                             <div class="rating-box">
                                                 <ul>
@@ -353,7 +327,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-sm-6 pt-6 pt-sm-0">
+                                }*@
+                                @*<div class="col-lg-4 col-sm-6 pt-6 pt-sm-0">
                                     <div class="product-item">
                                         <div class="product-img img-zoom-effect">
                                             <a href="single-product.html">
@@ -696,12 +671,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>*@
                             </div>
                         </div>
                         <div class="tab-pane fade show active" id="list-view" role="tabpanel" aria-labelledby="list-view-tab">
                             <div class="product-list-view with-sidebar row">
-                                <div class="col-12">
+                                @foreach(var item in Model)
+                                {
+                                    <div class="col-12 pt-6">
                                     <div class="product-item">
                                         <div class="product-img img-zoom-effect">
                                             <a href="single-product.html">
@@ -728,9 +705,9 @@
                                             </div>
                                         </div>
                                         <div class="product-content align-self-center">
-                                            <a class="product-name pb-2" href="single-product.html">Cow Milk & Meat</a>
+                                            <a class="product-name pb-2" asp-action="Details" asp-route-id="@item.ProductId" >@Html.DisplayFor(modelItem => item.ProductName)</a>
                                             <div class="price-box pb-1">
-                                                <span class="new-price">$80.00</span>
+                                                <span class="new-price">@Html.DisplayFor(modelItem => item.Price)</span>
                                             </div>
                                             <div class="rating-box pb-2">
                                                 <ul>
@@ -741,11 +718,12 @@
                                                     <li><i class="pe-7s-star"></i></li>
                                                 </ul>
                                             </div>
-                                            <p class="short-desc mb-0">Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi.</p>
+                                            <p class="short-desc mb-0">@Html.DisplayFor(modelItem => item.Description)</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 pt-6">
+                                }
+                                @*<div class="col-12 pt-6">
                                     <div class="product-item">
                                         <div class="product-img img-zoom-effect">
                                             <a href="single-product.html">
@@ -1096,7 +1074,7 @@
                                             <p class="short-desc mb-0">Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div>*@
                             </div>
                         </div>
                     </div>
@@ -1122,5 +1100,5 @@
             </div>
         </div>
     </div>
-</main>*@
+</main>
 <!-- Main Content Area End Here -->

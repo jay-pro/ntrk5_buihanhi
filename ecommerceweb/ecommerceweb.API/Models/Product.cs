@@ -1,4 +1,6 @@
-﻿namespace ecommerceweb.API.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ecommerceweb.API.Models
 {
     public partial class Product
     {
@@ -11,6 +13,7 @@
         public string ProductName { get; set; } = null!;
         public string? ShortDesc { get; set; }
         public string? Description { get; set; }
+        [ForeignKey("Category")]
         public int? CategoryId { get; set; }
         public int? Price { get; set; }
         public int? Discount { get; set; }
@@ -28,8 +31,7 @@
         public string? MetaKey { get; set; }
         public int? UnitsInStock { get; set; }
 
-        public virtual Category? Cat { get; set; }
-        //public virtual ICollection<AttributesPrice> AttributesPrices { get; set; }
+        public virtual Category? Category { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

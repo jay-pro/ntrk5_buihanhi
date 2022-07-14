@@ -63,3 +63,7 @@ D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.API\bin\Debug\ne
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.API\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.API\bin\Debug\net6.0\PagedList.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.API\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

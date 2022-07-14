@@ -1,6 +1,7 @@
 ﻿using ecommerceweb.Website.Models;
 using ecommerceweb.Website.Models.Context;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Diagnostics;
@@ -12,34 +13,12 @@ namespace ecommerceweb.Website.Controllers
     public class ProductController : Controller
     {
         string baseUrl = "https://localhost:44303";
+        public Product product = new Product();
 
-        private readonly ILogger<ProductController> _logger;
-
-        //private readonly EcommerceWebContext _context;
-
-        /*public ProductController(EcommerceWebContext context)
+        private readonly EcommerceWebContext _context;
+        public ProductController(EcommerceWebContext context)
         {
             _context = context;
-        }
-
-        public IActionResult Index()
-        {
-            return View();
-        }*/
-
-        /*public IActionResult Details(int id)
-        {
-            var product = _context.Products.Include(x => x.Cat).FirstOrDefault(x => x.ProductId == id);
-            if (product == null)
-            {
-                return RedirectToAction("Index");
-            }
-            return View(product);
-        }*/
-
-        public ProductController(ILogger<ProductController> logger)
-        {
-            _logger = logger;
         }
 
         //Get all products
@@ -53,7 +32,7 @@ namespace ecommerceweb.Website.Controllers
 
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage Res = await client.GetAsync("/api/products");
+                HttpResponseMessage Res = await client.GetAsync("/api/Products");
 
                 if (Res.IsSuccessStatusCode)
                 {
@@ -63,6 +42,37 @@ namespace ecommerceweb.Website.Controllers
 
                 return View(products);
             }
+        }
+
+        //Get a product's details
+        public async Task<ActionResult> Details (int id)
+        {
+            //var client = new HttpClient();
+            //client.BaseAddress = new Uri(baseUrl);
+            //var Res = await client.GetAsync($"api/Products/{ProductId}");
+            //var Result = Res.Content.ReadAsStringAsync().Result;
+            //product = JsonConvert.DeserializeObject<Product>(Result);
+            //return View(product);
+
+            var client = new HttpClient();
+            
+            client.BaseAddress = new Uri(baseUrl);
+            client.DefaultRequestHeaders.Clear();
+
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage Res = await client.GetAsync($"/api/Products/{id}");
+
+            var ProductResponse = Res.Content.ReadAsStringAsync().Result;
+            product = JsonConvert.DeserializeObject<Product>(ProductResponse);
+
+            /*if (Res.IsSuccessStatusCode)
+            {
+                var ProductResponse = Res.Content.ReadAsStringAsync().Result;
+                product = JsonConvert.DeserializeObject<Product>(ProductResponse);
+            }*/
+            
+            return View(product);
         }
     }
 }

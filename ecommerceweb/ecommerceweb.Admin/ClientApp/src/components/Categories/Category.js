@@ -81,7 +81,7 @@ const Category = props => {
       });
   };
   const updateCategory = () => {
-    CategoryService.update(currentCategory.categoryId, currentCategory)
+    CategoryService.update(currentCategory.CategoryId, currentCategory)
       .then(response => {
         console.log(response.data);
         setMessage("The Category was updated successfully!");
@@ -92,7 +92,7 @@ const Category = props => {
   };
 
   const deleteCategory = () => {
-    CategoryService.remove(currentCategory.categoryId)
+    CategoryService.remove(currentCategory.CategoryId)
       .then(response => {
         console.log(response.data);
         props.history.push("/categorieslist/")

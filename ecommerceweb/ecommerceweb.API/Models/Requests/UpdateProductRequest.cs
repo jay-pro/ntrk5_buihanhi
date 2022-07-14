@@ -1,4 +1,6 @@
-﻿namespace ecommerceweb.API.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ecommerceweb.API.Models
 {
     public class UpdateProductRequest
     {
@@ -8,6 +10,7 @@
         public string? ShortDesc { get; set; }
         public string? Description { get; set; }
         public int? CategoryId { get; set; }
+        [ForeignKey("Category")]
         public int? Price { get; set; }
         public int? Discount { get; set; }
         public string? Thumb { get; set; }

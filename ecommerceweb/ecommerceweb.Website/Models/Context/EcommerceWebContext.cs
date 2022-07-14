@@ -160,12 +160,12 @@ namespace ecommerceweb.Website.Models.Context
                 entity.Property(e => e.Status).HasMaxLength(50);
             });
 
-            OnModelCreatingPartial(modelBuilder);
+            //OnModelCreatingPartial(modelBuilder);
         }
 
         private void OnModelCreatingPartial(ModelBuilder modelBuilder)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

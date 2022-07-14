@@ -1,18 +1,10 @@
-﻿@*@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>*@
-@model IEnumerable<ecommerceweb.Website.Models.Category>
-
+﻿@*@model IEnumerable<ecommerceweb.Website.Models.Product>
+*@
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="form-horizontal">
+@*<div class="form-horizontal">
     <hr />
     <div class="form-group">
         <table class="table table-responsive" style="width:400px">
@@ -36,16 +28,10 @@
             }
         </table>
     </div>
-</div>
-
-
-
-
-
-
+</div>*@
 
 <!-- Begin Slider Area -->
-@*<div class="slider-area">
+<div class="slider-area">
     <!-- Main Slider -->
     <div class="swiper-container main-slider swiper-arrow with-bg_white">
         <div class="swiper-wrapper">
@@ -137,13 +123,12 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
-
-</div>*@
+</div>
 <!-- Slider Area End Here -->
 
 
 <!-- Begin Shipping Area -->
-@*<div class="shipping-area section-space-top-100">
+<div class="shipping-area section-space-top-100">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6">
@@ -181,16 +166,16 @@
             </div>
         </div>
     </div>
-</div>*@
+</div>
 <!-- Shipping Area End Here -->
 
 
 <!-- Begin Product Area -->
-@*<div class="product-area section-space-top-100">
+<div class="product-area section-space-top-100">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <ul class="nav product-tab-nav pb-10" id="myTab" role="tablist">
+                @*<ul class="nav product-tab-nav pb-10" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a class="active" id="all-items-tab" data-bs-toggle="tab" href="#all-items" role="tab" aria-controls="all-items" aria-selected="true">
                             <div class="product-tab-icon">
@@ -231,11 +216,13 @@
                             Wheat
                         </a>
                     </li>
-                </ul>
+                </ul>*@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="all-items" role="tabpanel" aria-labelledby="all-items-tab">
                         <div class="product-item-wrap row">
-                            <div class="col-xl-3 col-lg-4 col-sm-6 pt-6">
+                            @*@foreach (var item in Model)
+                            {
+                                <div class="col-xl-3 col-lg-4 col-sm-6 pt-6">
                                 <div class="product-item">
                                     <div class="product-img img-zoom-effect">
                                         <a href="single-product.html">
@@ -262,9 +249,9 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <a class="product-name" href="single-product.html">Black Peppepr Read</a>
+                                        <a class="product-name" href="single-product.html">@Html.DisplayFor(modelItem => item.ProductName)</a>
                                         <div class="price-box pb-1">
-                                            <span class="new-price">$80.00</span>
+                                            <span class="new-price">@Html.DisplayFor(modelItem => item.Price)</span>
                                         </div>
                                         <div class="rating-box">
                                             <ul>
@@ -276,9 +263,10 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                             </div>
                             </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6 pt-6">
+                            }*@
+                            @*<div class="col-xl-3 col-lg-4 col-sm-6 pt-6">
                                 <div class="product-item">
                                     <div class="product-img img-zoom-effect">
                                         <a href="single-product.html">
@@ -320,8 +308,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6 pt-6">
+                            </div>*@
+                            @*<div class="col-xl-3 col-lg-4 col-sm-6 pt-6">
                                 <div class="product-item">
                                     <div class="product-img img-zoom-effect">
                                         <a href="single-product.html">
@@ -363,8 +351,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6 pt-6">
+                            </div>*@
+                            @*<div class="col-xl-3 col-lg-4 col-sm-6 pt-6">
                                 <div class="product-item">
                                     <div class="product-img img-zoom-effect">
                                         <a href="single-product.html">
@@ -406,10 +394,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>*@
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="fresh-fruits" role="tabpanel" aria-labelledby="fresh-fruits-tab">
+                    @*<div class="tab-pane fade" id="fresh-fruits" role="tabpanel" aria-labelledby="fresh-fruits-tab">
                         <div class="product-item-wrap row">
                             <div class="col-xl-3 col-lg-4 col-sm-6">
                                 <div class="product-item">
@@ -756,8 +744,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="vegetable" role="tabpanel" aria-labelledby="vegetable-tab">
+                    </div>*@
+                    @*<div class="tab-pane fade" id="vegetable" role="tabpanel" aria-labelledby="vegetable-tab">
                         <div class="product-item-wrap row">
                             <div class="col-xl-3 col-lg-4 col-sm-6">
                                 <div class="product-item">
@@ -1104,8 +1092,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="fish-meat" role="tabpanel" aria-labelledby="fish-meat-tab">
+                    </div>*@
+                    @*<div class="tab-pane fade" id="fish-meat" role="tabpanel" aria-labelledby="fish-meat-tab">
                         <div class="product-item-wrap row">
                             <div class="col-xl-3 col-lg-4 col-sm-6">
                                 <div class="product-item">
@@ -1452,8 +1440,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="wheat" role="tabpanel" aria-labelledby="wheat-tab">
+                    </div>*@
+                    @*<div class="tab-pane fade" id="wheat" role="tabpanel" aria-labelledby="wheat-tab">
                         <div class="product-item-wrap row">
                             <div class="col-xl-3 col-lg-4 col-sm-6">
                                 <div class="product-item">
@@ -1800,12 +1788,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
     </div>
-</div>*@
+</div>
 <!-- Product Area End Here -->
 
 

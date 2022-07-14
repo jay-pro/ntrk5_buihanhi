@@ -38,7 +38,7 @@ namespace ecommerceweb.Website.Controllers
         //Get all categories
         public async Task<ActionResult> Index()
         {
-            List<Category> categories = new List<Category>();
+            /*List<Category> categories = new List<Category>();
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(baseUrl);
@@ -52,10 +52,9 @@ namespace ecommerceweb.Website.Controllers
                 {
                     var CategoryResponse = Res.Content.ReadAsStringAsync().Result;
                     categories = JsonConvert.DeserializeObject<List<Category>>(CategoryResponse);
-                }
+                }*/
 
-                return View(categories);
+                return View(/*categories*/);
             }
         }     
     }
-}
