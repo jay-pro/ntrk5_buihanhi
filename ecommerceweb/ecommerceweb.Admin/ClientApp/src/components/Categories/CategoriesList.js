@@ -1,13 +1,19 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import CategoryService from "../../services/CategoryService";
-import { Link } from "react-router-dom";
+import { Link/* , useNavigate */ } from "react-router-dom";
 import { useTable } from "react-table";
+import axios from "axios";
 
 const CategoriesList = (props) => {
   const [categories, setCategories] = useState([]);
   const [currentCategory, setCurrentCategory] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [searchName, setSearchName] = useState("");
+
+  /* const navigate = useNavigate();
+  const navigateToCategoriesList = () => {
+    navigate('/categorieslist');
+  }; */
 
   const categoriesRef = useRef();
   categoriesRef.current = categories;
@@ -66,8 +72,11 @@ const CategoriesList = (props) => {
   };
 
   const openCategory = (rowIndex) => {
-    const categoryId = categoriesRef.current[rowIndex].categoryId;
-    props.history.push("/Categories/" + categoryId);
+    //const categoryId = categoriesRef.current[rowIndex].categoryId;
+    /* console.log(rowIndex);
+    const categoryId = rowIndex;
+    console.log(categoryId); */
+    /* props.history.push("/CategoriesList/" + rowIndex); */
   };
 
   const deleteCategory = (rowIndex) => {
@@ -82,8 +91,48 @@ const CategoriesList = (props) => {
       })
       .catch((e) => {
         console.log(e);
-      })
+      });
+      /* navigateToCategoriesList(); */
   };
+
+  //update15-------------------------------------------
+  /* const state = {
+    CategoryId: null,
+    CategoryName:"",
+    Description: ""
+  };
+
+  const onNameChange = e => {
+    this.setState({
+      CategoryName: e.target.value
+    });
+  };
+
+  const onIdChange = e => {
+    this.setState({
+      CategoryId: e.target.value
+    });
+  };
+
+  const onDescriptionChange = e => {
+    this.setState({
+      Description: e.target.value
+    });
+  };
+
+  const updateCategory = (categoryId, e) => {
+    const data = {
+      CategoryName: this.state.CategoryName,
+      Description: this.state.Description
+    }
+    axios.put(`https://localhost:44303/api/Categories/${categoryId}`,data)
+          .then(res => {
+            console.log(res);  
+            console.log(res.data);  
+            window.location.reload(false);  
+            this.setState(res.data);  
+          })
+  } */
 
   const columns = useMemo(
     () => [
@@ -202,6 +251,23 @@ const CategoriesList = (props) => {
             Remove All
         </button>
       </div>
+
+            {/* update---- */}
+      {/* <form>
+        <input
+          placeholder="CategoryId" value={this.state.CategoryId}
+          onChange={this.onIdChange} required
+        />
+        <input
+          placeholder="CategoryName" value={this.state.CategoryName}
+          onChange={this.onNameChange} required
+        />
+        <input
+          placeholder="description" value={this.state.Description}
+          onChange={this.onDescriptionChange} required
+        />
+              <button variant="danger" onClick={(e) => this.updateRow(this.state.id, e)}>Update</button>
+      </form> */}
     </div>
   );
 };

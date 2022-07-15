@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import ProductService from "../../services/ProductService";
-import { Link } from "react-router-dom";
+import { Link/* , useNavigate */ } from "react-router-dom";
 import { useTable } from "react-table";
 
 const ProductsList = (props) => {
@@ -8,6 +8,11 @@ const ProductsList = (props) => {
   const [currentProduct, setCurrentProduct] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [searchName, setSearchName] = useState("");
+
+  /* const navigate = useNavigate();
+  const navigateToProductsList = () => {
+    navigate('/productslist');
+  }; */
   
   const productsRef = useRef();
   productsRef.current = products;
@@ -67,15 +72,16 @@ const ProductsList = (props) => {
   };
 
   const openProduct = (rowIndex) => {
-    const productId = productsRef.current[rowIndex].productId;
-    props.history.push("/Products/" + productId);
+    /* const productId = productsRef.current[rowIndex].productId;
+    props.history.push("/Products/" + productId); */
   };
 
   const deleteProduct = (rowIndex) => {
-    const productId = productsRef.current[rowIndex].productId;
-    ProductService.remove(productId)
+    //const productId = productsRef.current[rowIndex].productId;
+    console.log(rowIndex);
+    ProductService.remove(rowIndex)
       .then((response) => {
-        props.history.push("/Categories/");
+        //props.history.push("/Categories/");
         let newProducts = [...productsRef.current];
         newProducts.splice(rowIndex, 1);
         setProducts(newProducts);
@@ -83,6 +89,7 @@ const ProductsList = (props) => {
       .catch((e) => {
         console.log(e);
       })
+    /* navigateToProductsList(); */
   };
 
   const columns = useMemo(
@@ -122,12 +129,15 @@ const ProductsList = (props) => {
         Header: "Actions",
         accessor: "actions",
         Cell: (props) => {
-          const rowIdx = props.row.productId;
+          const rowIdx = props.row.original.productId;
           return (
             <div>
-              <span onClick={() => openProduct(rowIdx)}>
+              <Link to={`${rowIdx}`}>
                 <i className="far fa-edit action mr-2"></i>
-              </span>
+              </Link>
+              {/* <span onClick={() => openProduct(rowIdx)}>
+                <i className="far fa-edit action mr-2"></i>
+              </span> */}
               <span onClick={() => deleteProduct(rowIdx)}>
                 <i className="fas fa-trash action"></i>
               </span>

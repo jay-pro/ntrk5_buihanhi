@@ -115,7 +115,7 @@ const AddCategory = () => {
               name="description"
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="parentId">ParentId</label>
             <input
               type="text"
@@ -150,7 +150,7 @@ const AddCategory = () => {
               onChange={handleInputChange}
               name="ordering"
             />
-          </div>
+          </div> */}
           {/* <div className="form-group">
             <label htmlFor="published">Published</label>
             <input
@@ -163,7 +163,7 @@ const AddCategory = () => {
               name="published"
             />
           </div> */}
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="thumb">Thumb</label>
             <input
               type="text"
@@ -246,7 +246,7 @@ const AddCategory = () => {
               onChange={handleInputChange}
               name="schemaMarkup"
             />
-          </div>
+          </div> */}
           <button onClick={saveCategory} className="btn btn-success">
             Submit
           </button>

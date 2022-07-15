@@ -2,7 +2,7 @@ import { Counter } from "./components/Counter";
 import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
 
-import Category from "./components/Categories/Category";
+import UpdateCategory from "./components/Categories/UpdateCategory";
 import AddCategory from "./components/Categories/AddCategory";
 import CategoriesList from "./components/Categories/CategoriesList";
 
@@ -28,7 +28,7 @@ const AppRoutes = [
   },
   {
     path: '/categorieslist/:CategoryId',
-    element:<Category/>
+    element:<UpdateCategory/>
   },
   {
     path: '/addcategory',

@@ -59,6 +59,7 @@ const AddProduct = () => {
       metaKey: product.metaKey,
       unitsInStock: product.unitsInStock
     };
+
     ProductService.create(data)
     .then(response => {
       setProduct({
@@ -116,10 +117,10 @@ const AddProduct = () => {
               required
               value={product.productName}
               onChange={handleInputChange}
-              name="name"
+              name="productName"
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="shortDesc">ShortDesc</label>
             <input
               type="text"
@@ -130,7 +131,7 @@ const AddProduct = () => {
               onChange={handleInputChange}
               name="shortDesc"
             />
-          </div>
+          </div> */}
           <div className="form-group">
             <label htmlFor="description">Description</label>
             <input
@@ -179,7 +180,7 @@ const AddProduct = () => {
               name="discount"
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="thumb">Thumb</label>
             <input
               type="text"
@@ -190,7 +191,7 @@ const AddProduct = () => {
               onChange={handleInputChange}
               name="thumb"
             />
-          </div>
+          </div> */}
           <div className="form-group">
             <label htmlFor="images">Images</label>
             <input
@@ -203,7 +204,7 @@ const AddProduct = () => {
               name="images"
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="createdDate">CreatedDate</label>
             <input
               type="datetime"
@@ -226,7 +227,7 @@ const AddProduct = () => {
               onChange={handleInputChange}
               name="modifiedDate"
             />
-          </div>
+          </div> */}
           <div className="form-group">
             <label htmlFor="bestSellers">BestSellers</label>
             <input
@@ -239,7 +240,7 @@ const AddProduct = () => {
               name="bestSellers"
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="homeFlag">HomeFlag</label>
             <input
               type="text"
@@ -262,7 +263,7 @@ const AddProduct = () => {
               onChange={handleInputChange}
               name="active"
             />
-          </div>
+          </div> */}
           <div className="form-group">
             <label htmlFor="tags">Tags</label>
             <input
@@ -275,7 +276,7 @@ const AddProduct = () => {
               name="tags"
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="title">Title</label>
             <input
               type="text"
@@ -322,7 +323,7 @@ const AddProduct = () => {
               onChange={handleInputChange}
               name="metaKey"
             />
-          </div>
+          </div> */}
           <div className="form-group">
             <label htmlFor="unitsInStock">UnitsInStock</label>
             <input
