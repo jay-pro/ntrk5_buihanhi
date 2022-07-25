@@ -30,9 +30,6 @@ namespace ecommerceweb.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AccountId"), 1L, 1);
 
-                    b.Property<bool>("Active")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
@@ -45,30 +42,25 @@ namespace ecommerceweb.API.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("Fullname")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("LastLogin")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PassWord")
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("RoleId")
+                    b.Property<int>("Role")
                         .HasColumnType("int");
 
-                    b.Property<string>("Salt")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
+                    b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("AccountId");
-
-                    b.HasIndex("RoleId");
 
                     b.ToTable("Accounts");
                 });
@@ -81,139 +73,21 @@ namespace ecommerceweb.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"), 1L, 1);
 
-                    b.Property<string>("Alias")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CategoryName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Cover")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Levels")
-                        .HasColumnType("int");
-
-                    b.Property<string>("MetaDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MetaKey")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int?>("Ordering")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ParentId")
                         .HasColumnType("int");
 
                     b.Property<bool>("Published")
                         .HasColumnType("bit");
 
-                    b.Property<string>("SchemaMarkup")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Thumb")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
-                });
-
-            modelBuilder.Entity("ecommerceweb.API.Models.Customer", b =>
-                {
-                    b.Property<int>("CustomerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"), 1L, 1);
-
-                    b.Property<bool>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Avatar")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Birthday")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("District")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FullName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastLogin")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("LocationId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Salt")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Ward")
-                        .HasColumnType("int");
-
-                    b.HasKey("CustomerId");
-
-                    b.HasIndex("LocationId");
-
-                    b.ToTable("Customers");
-                });
-
-            modelBuilder.Entity("ecommerceweb.API.Models.Location", b =>
-                {
-                    b.Property<int>("LocationId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LocationId"), 1L, 1);
-
-                    b.Property<int?>("Levels")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NameWithType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Parent")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Slug")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("LocationId");
-
-                    b.ToTable("Locations");
                 });
 
             modelBuilder.Entity("ecommerceweb.API.Models.Order", b =>
@@ -224,20 +98,14 @@ namespace ecommerceweb.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1L, 1);
 
+                    b.Property<int?>("AccountId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("Deleted")
                         .HasColumnType("bit");
-
-                    b.Property<int?>("District")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("LocationId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
@@ -263,12 +131,9 @@ namespace ecommerceweb.API.Migrations
                     b.Property<int>("TransactStatusId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Ward")
-                        .HasColumnType("int");
-
                     b.HasKey("OrderId");
 
-                    b.HasIndex("CustomerId");
+                    b.HasIndex("AccountId");
 
                     b.HasIndex("TransactStatusId");
 
@@ -327,9 +192,6 @@ namespace ecommerceweb.API.Migrations
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Alias")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("BestSellers")
                         .HasColumnType("bit");
 
@@ -348,15 +210,6 @@ namespace ecommerceweb.API.Migrations
                     b.Property<bool>("HomeFlag")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Images")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MetaDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MetaKey")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
@@ -367,16 +220,7 @@ namespace ecommerceweb.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ShortDesc")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Tags")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Thumb")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("UnitsInStock")
@@ -389,23 +233,60 @@ namespace ecommerceweb.API.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("ecommerceweb.API.Models.Role", b =>
+            modelBuilder.Entity("ecommerceweb.API.Models.ProductImage", b =>
                 {
-                    b.Property<int>("RoleId")
+                    b.Property<int>("ProductImageId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoleId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductImageId"), 1L, 1);
 
-                    b.Property<string>("Description")
+                    b.Property<string>("ImageName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RoleName")
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("RoleId");
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
 
-                    b.ToTable("Roles");
+                    b.HasKey("ProductImageId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductImages");
+                });
+
+            modelBuilder.Entity("ecommerceweb.API.Models.Rating", b =>
+                {
+                    b.Property<int>("RatingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RatingId"), 1L, 1);
+
+                    b.Property<int>("AccountId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Stars")
+                        .HasColumnType("int");
+
+                    b.HasKey("RatingId");
+
+                    b.HasIndex("AccountId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Ratings");
                 });
 
             modelBuilder.Entity("ecommerceweb.API.Models.TransactStatus", b =>
@@ -427,29 +308,11 @@ namespace ecommerceweb.API.Migrations
                     b.ToTable("TransactStatuses");
                 });
 
-            modelBuilder.Entity("ecommerceweb.API.Models.Account", b =>
-                {
-                    b.HasOne("ecommerceweb.API.Models.Role", "Role")
-                        .WithMany("Accounts")
-                        .HasForeignKey("RoleId");
-
-                    b.Navigation("Role");
-                });
-
-            modelBuilder.Entity("ecommerceweb.API.Models.Customer", b =>
-                {
-                    b.HasOne("ecommerceweb.API.Models.Location", "Location")
-                        .WithMany("Customers")
-                        .HasForeignKey("LocationId");
-
-                    b.Navigation("Location");
-                });
-
             modelBuilder.Entity("ecommerceweb.API.Models.Order", b =>
                 {
-                    b.HasOne("ecommerceweb.API.Models.Customer", "Customer")
+                    b.HasOne("ecommerceweb.API.Models.Account", "Account")
                         .WithMany("Orders")
-                        .HasForeignKey("CustomerId");
+                        .HasForeignKey("AccountId");
 
                     b.HasOne("ecommerceweb.API.Models.TransactStatus", "TransactStatus")
                         .WithMany("Orders")
@@ -457,7 +320,7 @@ namespace ecommerceweb.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Customer");
+                    b.Navigation("Account");
 
                     b.Navigation("TransactStatus");
                 });
@@ -479,26 +342,53 @@ namespace ecommerceweb.API.Migrations
 
             modelBuilder.Entity("ecommerceweb.API.Models.Product", b =>
                 {
-                    b.HasOne("ecommerceweb.API.Models.Category", "Cat")
+                    b.HasOne("ecommerceweb.API.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId");
 
-                    b.Navigation("Cat");
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("ecommerceweb.API.Models.ProductImage", b =>
+                {
+                    b.HasOne("ecommerceweb.API.Models.Product", "Product")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("ecommerceweb.API.Models.Rating", b =>
+                {
+                    b.HasOne("ecommerceweb.API.Models.Account", "Account")
+                        .WithMany("Ratings")
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ecommerceweb.API.Models.Product", "Product")
+                        .WithMany("Ratings")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("ecommerceweb.API.Models.Account", b =>
+                {
+                    b.Navigation("Orders");
+
+                    b.Navigation("Ratings");
                 });
 
             modelBuilder.Entity("ecommerceweb.API.Models.Category", b =>
                 {
                     b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("ecommerceweb.API.Models.Customer", b =>
-                {
-                    b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("ecommerceweb.API.Models.Location", b =>
-                {
-                    b.Navigation("Customers");
                 });
 
             modelBuilder.Entity("ecommerceweb.API.Models.Order", b =>
@@ -509,11 +399,10 @@ namespace ecommerceweb.API.Migrations
             modelBuilder.Entity("ecommerceweb.API.Models.Product", b =>
                 {
                     b.Navigation("OrderDetails");
-                });
 
-            modelBuilder.Entity("ecommerceweb.API.Models.Role", b =>
-                {
-                    b.Navigation("Accounts");
+                    b.Navigation("ProductImages");
+
+                    b.Navigation("Ratings");
                 });
 
             modelBuilder.Entity("ecommerceweb.API.Models.TransactStatus", b =>

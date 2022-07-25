@@ -1,116 +1,122 @@
-﻿using ecommerceweb.API.Data;
+﻿using AutoMapper;
+using ecommerceweb.API.Interfaces;
 using ecommerceweb.API.Models;
+using ecommerceweb.SharedModel;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;//
+using ecommerceweb.API.Data;//
+using Microsoft.EntityFrameworkCore;//
 
 namespace ecommerceweb.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CategoriesController : Controller
+    public class CategoriesController : ControllerBase
     {
-        private readonly APIDbContext dbContext;
-        public CategoriesController(APIDbContext dbContext)
+        private readonly IMapper _mapper;
+        private readonly ICategoryRepository _category;
+
+        public CategoriesController(ICategoryRepository category, IMapper mapper)
         {
-            this.dbContext = dbContext;
+            _category = category;
+            _mapper = mapper;
         }
 
         //Get all categories
         [HttpGet]
         public async Task<IActionResult> GetCategories()
         {
-            return Ok(await dbContext.Categories.ToListAsync());
+            try
+            {
+                var getCategories = await _category.GetAsync();
+                if (!getCategories.Any())
+                {
+                    return NotFound("There's no category.");
+                }
+                var categoryDTO = _mapper.Map<List<CategoryDTO>>(getCategories);
+                return Ok(categoryDTO);
+            }
+            catch
+            {
+                return BadRequest("Ooops.");
+            }
         }
 
         //Get a category's details
         [HttpGet]
-        [Route("{CategoryId:int}")]//Guid
-        public async Task<IActionResult> GetCategory([FromRoute] int CategoryId)//Guid
+        [Route("{CategoryId:int}")]
+        public async Task<IActionResult> GetCategory([FromRoute] int CategoryId)
         {
-            var category = await dbContext.Categories.Include(x => x.Products).FirstOrDefaultAsync(x => x.CategoryId == CategoryId);
-            if (category == null)//!=
+            try
             {
-                return NotFound();
+                var getCategory = await _category.GetByIdAsync(CategoryId);
+                if (getCategory == null)
+                {
+                    return NotFound("There's no category.");
+                }
+                var categoryDTO = _mapper.Map<CategoryDTO>(getCategory);
+                return Ok(categoryDTO);
             }
-            return Ok(category);
+            catch
+            {
+                return BadRequest("Ooops.");
+            }
         }
 
         //Create a category
         [HttpPost]
-        public async Task<IActionResult> AddCategoryAsync(AddCategoryRequest addCategoryRequest)
+        public async Task<IActionResult> AddCategoryAsync(CategoryDTO categoryDTO)
         {
-            var category = new Category()
+            try
             {
-                //CategoryId = Guid.NewGuid(),
-                //CategoryId = addCategoryRequest.CategoryId,
-                CategoryName = addCategoryRequest.CategoryName,
-                Description = addCategoryRequest.Description,
-                ParentId = addCategoryRequest.ParentId,
-                Levels = addCategoryRequest.Levels,
-                Ordering = addCategoryRequest.Ordering,
-                Published = addCategoryRequest.Published,
-                Thumb = addCategoryRequest.Thumb,
-                Title = addCategoryRequest.Title,
-                Alias = addCategoryRequest.Alias,
-                MetaDesc = addCategoryRequest.MetaDesc,
-                MetaKey = addCategoryRequest.MetaKey,
-                Cover = addCategoryRequest.Cover,
-                SchemaMarkup = addCategoryRequest.SchemaMarkup
-                //,Images = addCategoryRequest.Images
-            };
-            if(category.CategoryName ==" ")
-            {
-                return NotFound();
+                var createCategory = _mapper.Map<Category>(categoryDTO);
+                var newcategory = await _category.PostAsync(createCategory);
+                var returnCategory = _mapper.Map<CategoryDTO>(newcategory);
+                return Ok(returnCategory);
             }
-
-            await dbContext.Categories.AddAsync(category);
-            await dbContext.SaveChangesAsync();
-
-            return Ok(category);
+            catch
+            {
+                return BadRequest("Ooops.");
+            }
         }
 
-
+        //Update a category
         [HttpPut]
-        [Route("{CategoryId:int}")]//Guid
-        public async Task<IActionResult> UpdateCategory([FromRoute] int CategoryId, UpdateCategoryRequest updateCategoryRequest)//Guid
+        [Route("{CategoryId:int}")]
+        public async Task<IActionResult> UpdateCategory([FromRoute] int CategoryId, CategoryDTO categoryDTO)
         {
-            var category = await dbContext.Categories.FindAsync(CategoryId);
-            if(category != null)
+            try
             {
-                category.CategoryName = updateCategoryRequest.CategoryName;
-                category.Description = updateCategoryRequest.Description;
-                category.ParentId = updateCategoryRequest.ParentId;
-                category.Levels = updateCategoryRequest.Levels;
-                category.Ordering = updateCategoryRequest.Ordering;
-                category.Published = updateCategoryRequest.Published;
-                category.Thumb = updateCategoryRequest.Thumb;
-                category.Title = updateCategoryRequest.Title;
-                category.Alias = updateCategoryRequest.Alias;
-                category.MetaDesc = updateCategoryRequest.MetaDesc;
-                category.MetaKey = updateCategoryRequest.MetaKey;
-                category.Cover = updateCategoryRequest.Cover;
-                category.SchemaMarkup = updateCategoryRequest.SchemaMarkup;
-                //,Images = addCategoryRequest.Images;
-
-                await dbContext.SaveChangesAsync();
-                return Ok(category);
+                var updateCategory = _mapper.Map<Category>(categoryDTO);
+                var modifiedCategory = await _category.PutAsync(CategoryId, updateCategory);
+                var returnCategory = _mapper.Map<CategoryDTO>(modifiedCategory);
+                return Ok(returnCategory);
             }
-            return NotFound();
+            catch
+            {
+                return BadRequest("Ooops.");
+            }
         }
 
-
+        //Delete a category
         [HttpDelete]
         [Route("{CategoryId:int}")]
-        public async Task<IActionResult> DeleteCategory([FromRoute] int CategoryId)//Guid
+        public async Task<IActionResult> DeleteCategory([FromRoute] int CategoryId)
         {
-            var Category = await dbContext.Categories.FindAsync(CategoryId);
-            if (Category != null)
+            try
             {
-                dbContext.Remove(Category);
-                await dbContext.SaveChangesAsync();
-                return Ok(Category);
+                var deleteCategory = await _category.GetByIdAsync(CategoryId);
+                if (deleteCategory == null)
+                {
+                    return NotFound("There's no category.");
+                }
+                await _category.DeleteAsync(CategoryId);
+                return Ok("Deleted successfully.");
             }
-            return NotFound();
+            catch
+            {
+                return BadRequest("Ooops.");
+            }
         }
     }
 }

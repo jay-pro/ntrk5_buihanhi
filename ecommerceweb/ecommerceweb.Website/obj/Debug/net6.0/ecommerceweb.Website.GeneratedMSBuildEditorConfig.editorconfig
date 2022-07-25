@@ -1,4 +1,5 @@
 is_global = true
+build_property.RefitInternalNamespace = ecommerceweb.Website
 build_property.TargetFramework = net6.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
@@ -14,10 +15,6 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = D:\NTRK(5)\Assignments\ntrk5_buihanhi\ecommerceweb\ecommerceweb.Website
 build_property._RazorSourceGeneratorDebug = 
-
-[D:/NTRK(5)/Assignments/ntrk5_buihanhi/ecommerceweb/ecommerceweb.Website/Views/Blog/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
 
 [D:/NTRK(5)/Assignments/ntrk5_buihanhi/ecommerceweb/ecommerceweb.Website/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s

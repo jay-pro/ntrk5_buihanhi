@@ -7,12 +7,10 @@ const Product = props => {
   const initialProductState = {
     ProductId: null,
     ProductName:"",
-    ShortDesc:"",
     Description: "",
     CategoryId:"",
     Price:0,
     Discount:0,
-    Thumb: "",
     Images: "",
     CreatedDate: "",
     ModifiedDate: "",
@@ -20,10 +18,6 @@ const Product = props => {
     HomeFlag:false,
     Active:false,
     Tags:"",
-    Title:"",
-    Alias:"",
-    MetaDesc: "",
-    MetaKey: "",
     UnitsInStock: 0
   };
 
@@ -55,12 +49,10 @@ const Product = props => {
     var data = {
         ProductId: currentProduct.ProductId,
         ProductName: currentProduct.ProductName,
-        ShortDesc: currentProduct.ShortDesc,
         Description: currentProduct.Description,
         CategoryId: currentProduct.CategoryId,
         Price: currentProduct.Price,
         Discount:currentProduct.Discount,
-        Thumb: currentProduct.Thumb,
         Images: currentProduct.Images,
         CreatedDate: currentProduct.CreatedDate,
         ModifiedDate: currentProduct.ModifiedDate,
@@ -68,10 +60,6 @@ const Product = props => {
         HomeFlag: currentProduct.HomeFlag,
         Active: currentProduct.Active,
         Tags: currentProduct.Tags,
-        Title: currentProduct.Title,
-        Alias: currentProduct.Alias,
-        MetaDesc: currentProduct.MetaDesc,
-        MetaKey: currentProduct.MetaKey,
         UnitsInStock: currentProduct.UnitsInStock
     };
 
@@ -181,18 +169,6 @@ const Product = props => {
               //value={category.Discount}
               onChange={handleInputChange}
               name="discount"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="thumb">Thumb</label>
-            <input
-              type="text"
-              className="form-control"
-              id="thumb"
-              required
-              //value={category.Thumb}
-              onChange={handleInputChange}
-              name="thumb"
             />
           </div>
           <div className="form-group">

@@ -1,5 +1,8 @@
-﻿using ecommerceweb.API.Data;
+﻿using AutoMapper;
+using ecommerceweb.API.Data;
+using ecommerceweb.API.Interfaces;
 using ecommerceweb.API.Models;
+using ecommerceweb.SharedModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,117 +10,111 @@ namespace ecommerceweb.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ProductsController : Controller
+    public class ProductsController : ControllerBase
     {
-        private readonly APIDbContext _context;
-        public ProductsController(APIDbContext dbContext)
+        private readonly IMapper _mapper;
+        private readonly IProductRepository _product;
+        public ProductsController(IProductRepository product, IMapper mapper)
         {
-            this._context = dbContext;
+            _product = product;
+            _mapper = mapper;
         }
 
-        //Admin Get all products
+        //Get all products
         [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
-            return Ok(await _context.Products.ToListAsync());
+            try
+            {
+                var getProducts = await _product.GetAsync();
+                if (!getProducts.Any())
+                {
+                    return NotFound("There's no product.");
+                }
+                var productDTO = _mapper.Map<List<ProductDTO>>(getProducts);
+                return Ok(productDTO);
+            }
+            catch
+            {
+                return BadRequest("Ooops.");
+            }
         }
 
         //Get a product's details
         [HttpGet]
-        [Route("{ProductId:int}")]//Guid
-        public async Task<IActionResult> GetProduct([FromRoute] int ProductId)//Guid
+        [Route("{ProductId:int}")]
+        public async Task<IActionResult> GetProduct([FromRoute] int ProductId)
         {
-            var product = await _context.Products.Include(x => x.OrderDetails).FirstOrDefaultAsync(x => x.ProductId == ProductId);
-            if (product == null)
+            try
             {
-                return NotFound();
+                var getProduct = await _product.GetByIdAsync(ProductId);
+                if (getProduct == null)
+                {
+                    return NotFound("There's no product.");
+                }
+                var productDTO = _mapper.Map<ProductDTO>(getProduct);
+                return Ok(productDTO);
             }
-            return Ok(product);
+            catch
+            {
+                return BadRequest("Ooops.");
+            }
         }
 
         //Create a product
         [HttpPost]
-        public async Task<IActionResult> AddProductAsync(AddProductRequest addProductRequest)
+        public async Task<IActionResult> AddProductAsync(ProductDTO productDTO)
         {
-            var Product = new Product()
+            try
             {
-                //ProductId = Guid.NewGuid(),
-                //ProductId = addProductRequest.ProductId,
-                ProductName = addProductRequest.ProductName,
-                ShortDesc = addProductRequest.ShortDesc,
-                Description = addProductRequest.Description,
-                CategoryId = addProductRequest.CategoryId,
-                Price = addProductRequest.Price,
-                Discount = addProductRequest.Discount,
-                Thumb = addProductRequest.Thumb,
-                Images = addProductRequest.Images,
-                CreatedDate = addProductRequest.CreatedDate,
-                ModifiedDate = addProductRequest.ModifiedDate,
-                BestSellers = addProductRequest.BestSellers, 
-                HomeFlag = addProductRequest.HomeFlag,
-                Active = addProductRequest.Active,
-                Tags = addProductRequest.Tags,
-                Title = addProductRequest.Title,
-                Alias = addProductRequest.Alias,
-                MetaDesc = addProductRequest.MetaDesc,
-                MetaKey = addProductRequest.MetaKey,
-                UnitsInStock = addProductRequest.UnitsInStock
-            };
-
-            await _context.Products.AddAsync(Product);
-            await _context.SaveChangesAsync();
-
-            return Ok(Product);
+                var createProduct = _mapper.Map<Product>(productDTO);
+                var newproduct = await _product.PostAsync(createProduct);
+                var returnProduct = _mapper.Map<ProductDTO>(newproduct);
+                return Ok(returnProduct);
+            }
+            catch
+            {
+                return BadRequest("Ooops.");
+            }
         }
 
         //Update a product
         [HttpPut]
-        [Route("{ProductId:int}")]//Guid
-        public async Task<IActionResult> UpdateProduct([FromRoute] int ProductId, UpdateProductRequest updateProductRequest)//Guid
+        [Route("{ProductId:int}")]
+        public async Task<IActionResult> UpdateProduct([FromRoute] int ProductId, ProductDTO productDTO)
         {
-            var Product = await _context.Products.FindAsync(ProductId);
-            if (Product != null)
+            try
             {
-                Product.ProductName = updateProductRequest.ProductName;
-                Product.ProductName = updateProductRequest.ProductName;
-                Product.ShortDesc = updateProductRequest.ShortDesc;
-                Product.Description = updateProductRequest.Description;
-                Product.CategoryId = updateProductRequest.CategoryId;
-                Product.Price = updateProductRequest.Price;
-                Product.Discount = updateProductRequest.Discount;
-                Product.Thumb = updateProductRequest.Thumb;
-                Product.Images = updateProductRequest.Images;
-                Product.CreatedDate = updateProductRequest.CreatedDate;
-                Product.ModifiedDate = updateProductRequest.ModifiedDate;
-                Product.BestSellers = updateProductRequest.BestSellers;
-                Product.HomeFlag = updateProductRequest.HomeFlag;
-                Product.Active = updateProductRequest.Active;
-                Product.Tags = updateProductRequest.Tags;
-                Product.Title = updateProductRequest.Title;
-                Product.Alias = updateProductRequest.Alias;
-                Product.MetaDesc = updateProductRequest.MetaDesc;
-                Product.MetaKey = updateProductRequest.MetaKey;
-                Product.UnitsInStock = updateProductRequest.UnitsInStock;
-
-                await _context.SaveChangesAsync();
-                return Ok(Product);
+                var createProduct = _mapper.Map<Product>(productDTO);
+                var modifiedProduct = await _product.PutAsync(ProductId, createProduct);
+                var returnProduct = _mapper.Map<ProductDTO>(modifiedProduct);
+                return Ok(returnProduct);
             }
-            return NotFound();
+            catch
+            {
+                return BadRequest("Ooops.");
+            }
         }
 
         //Delete a product
         [HttpDelete]
-        [Route("{ProductId:int}")]//Guid
-        public async Task<IActionResult> DeleteProduct([FromRoute] int ProductId)//Guid
+        [Route("{ProductId:int}")]
+        public async Task<IActionResult> DeleteProduct([FromRoute] int ProductId)
         {
-            var product = await _context.Products.FindAsync(ProductId);
-            if(product != null)
+            try
             {
-                _context.Remove(product);
-                await _context.SaveChangesAsync();
-                return Ok(product);
+                var deleteProduct = await _product.GetByIdAsync(ProductId);
+                if (deleteProduct == null)
+                {
+                    return NotFound("There's no product.");
+                }
+                await _product.DeleteAsync(ProductId);
+                return Ok("Deleted successfully");
             }
-            return NotFound();
+            catch
+            {
+                return BadRequest("Ooops.");
+            }
         }
     }
 }

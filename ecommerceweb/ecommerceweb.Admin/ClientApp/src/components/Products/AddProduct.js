@@ -5,12 +5,10 @@ const AddProduct = () => {
   const initialProductState = {
     ProductId: null,
     ProductName:"",
-    ShortDesc:"",
     Description: "",
     CategoryId:"",
     Price:0,
     Discount:0,
-    Thumb: "",
     Images: "",
     CreatedDate: "",
     ModifiedDate: "",
@@ -18,10 +16,6 @@ const AddProduct = () => {
     HomeFlag: true,
     Active: true,
     Tags:"",
-    Title:"",
-    Alias:"",
-    MetaDesc: "",
-    MetaKey: "",
     UnitsInStock: 0
   };
 
@@ -40,12 +34,10 @@ const AddProduct = () => {
     var data = {
       productId: product.productId,
       productName: product.productName,
-      shortDesc: product.shortDesc,
       description: product.description,
       categoryId: product.categoryId,
       price: product.price,
       discount:product.discount,
-      thumb: product.thumb,
       images: product.images,
       createdDate: product.createdDate,
       modifiedDate: product.modifiedDate,
@@ -53,10 +45,6 @@ const AddProduct = () => {
       homeFlag: product.homeFlag,
       active: product.active,
       tags: product.tags,
-      title: product.title,
-      alias: product.alias,
-      metaDesc: product.metaDesc,
-      metaKey: product.metaKey,
       unitsInStock: product.unitsInStock
     };
 
@@ -65,12 +53,10 @@ const AddProduct = () => {
       setProduct({
         ProductId: response.data.productId,
         ProductName: response.data.productName,
-        ShortDesc: response.data.shortDesc,
         Description: response.data.description,
         CategoryId: response.data.categoryId,
         Price: response.data.price,
         Discount:response.data.discount,
-        Thumb: response.data.thumb,
         Images: response.data.images,
         CreatedDate: response.data.createdDate,
         ModifiedDate: response.data.modifiedDate,
@@ -78,10 +64,6 @@ const AddProduct = () => {
         HomeFlag: response.data.homeFlag,
         Active: response.data.active,
         Tags: response.data.tags,
-        Title: response.data.title,
-        Alias: response.data.alias,
-        MetaDesc: response.data.metaDesc,
-        MetaKey: response.data.metaKey,
         UnitsInStock: response.data.unitsInStock
       });
       setSubmitted(true);
@@ -120,18 +102,6 @@ const AddProduct = () => {
               name="productName"
             />
           </div>
-          {/* <div className="form-group">
-            <label htmlFor="shortDesc">ShortDesc</label>
-            <input
-              type="text"
-              className="form-control"
-              id="shortDesc"
-              required
-              value={product.shortDesc}
-              onChange={handleInputChange}
-              name="shortDesc"
-            />
-          </div> */}
           <div className="form-group">
             <label htmlFor="description">Description</label>
             <input
@@ -180,18 +150,6 @@ const AddProduct = () => {
               name="discount"
             />
           </div>
-          {/* <div className="form-group">
-            <label htmlFor="thumb">Thumb</label>
-            <input
-              type="text"
-              className="form-control"
-              id="thumb"
-              required
-              value={product.thumb}
-              onChange={handleInputChange}
-              name="thumb"
-            />
-          </div> */}
           <div className="form-group">
             <label htmlFor="images">Images</label>
             <input
@@ -228,7 +186,7 @@ const AddProduct = () => {
               name="modifiedDate"
             />
           </div> */}
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="bestSellers">BestSellers</label>
             <input
               type="text"
@@ -240,7 +198,7 @@ const AddProduct = () => {
               name="bestSellers"
             />
           </div>
-          {/* <div className="form-group">
+          <div className="form-group">
             <label htmlFor="homeFlag">HomeFlag</label>
             <input
               type="text"
@@ -263,7 +221,7 @@ const AddProduct = () => {
               onChange={handleInputChange}
               name="active"
             />
-          </div> */}
+          </div>
           <div className="form-group">
             <label htmlFor="tags">Tags</label>
             <input
@@ -275,55 +233,8 @@ const AddProduct = () => {
               onChange={handleInputChange}
               name="tags"
             />
-          </div>
-          {/* <div className="form-group">
-            <label htmlFor="title">Title</label>
-            <input
-              type="text"
-              className="form-control"
-              id="title"
-              required
-              value={product.title}
-              onChange={handleInputChange}
-              name="title"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="alias">Alias</label>
-            <input
-              type="text"
-              className="form-control"
-              id="alias"
-              required
-              value={product.alias}
-              onChange={handleInputChange}
-              name="alias"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="metaDesc">MetaDesc</label>
-            <input
-              type="text"
-              className="form-control"
-              id="metaDesc"
-              required
-              value={product.metaDesc}
-              onChange={handleInputChange}
-              name="metaDesc"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="metaKey">MetaKey</label>
-            <input
-              type="text"
-              className="form-control"
-              id="metaKey"
-              required
-              value={product.metaKey}
-              onChange={handleInputChange}
-              name="metaKey"
-            />
-          </div> */}
+        </div>*/}
+
           <div className="form-group">
             <label htmlFor="unitsInStock">UnitsInStock</label>
             <input

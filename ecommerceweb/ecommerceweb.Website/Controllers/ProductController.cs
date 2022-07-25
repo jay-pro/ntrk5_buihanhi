@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Diagnostics;
-using System.Diagnostics;
 using System.Net.Http.Headers;
 using System.Web.Http;
 

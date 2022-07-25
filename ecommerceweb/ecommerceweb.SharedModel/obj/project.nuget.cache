@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "NDjhQv+EQtySm0vk4yvenWex4w2/svZ+X4+1gzs6Y+dCMPuX0bF6kizMA+94ZmhlgIDjeI3yOnJK5Le3N0oiCQ==",
+  "dgSpecHash": "ilZRE2cynxs9/qWI9D56+pxjNbkq8fOmmZ8UI7Wl1xu18zAbJRCltNimSF7jPSU0QsX/I8KIsq6rQQN+LRsxCQ==",
   "success": true,
   "projectFilePath": "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.SharedModel\\ecommerceweb.SharedModel.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\buiha\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\buiha\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
@@ -24,7 +26,7 @@
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.aspnetcore.routing\\2.2.0\\microsoft.aspnetcore.routing.2.2.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.aspnetcore.routing.abstractions\\2.2.0\\microsoft.aspnetcore.routing.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
-    "C:\\Users\\buiha\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\buiha\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.1.0\\microsoft.dotnet.platformabstractions.2.1.0.nupkg.sha512",

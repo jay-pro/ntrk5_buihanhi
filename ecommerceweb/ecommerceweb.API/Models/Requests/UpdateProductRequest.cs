@@ -13,7 +13,6 @@ namespace ecommerceweb.API.Models
         [ForeignKey("Category")]
         public int? Price { get; set; }
         public int? Discount { get; set; }
-        public string? Thumb { get; set; }
         public string? Images { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
@@ -21,12 +20,8 @@ namespace ecommerceweb.API.Models
         public bool HomeFlag { get; set; }
         public bool Active { get; set; }
         public string? Tags { get; set; }
-        public string? Title { get; set; }
-        public string? Alias { get; set; }
-        public string? MetaDesc { get; set; }
-        public string? MetaKey { get; set; }
         public int? UnitsInStock { get; set; }
-        public virtual Category? Cat { get; set; }
+        public virtual Category? Category { get; set; }
 
     }
 }
