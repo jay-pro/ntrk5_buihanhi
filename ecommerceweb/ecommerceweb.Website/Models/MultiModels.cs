@@ -4,20 +4,20 @@ namespace ecommerceweb.Website.Models
 {
     public partial class MultiModels
     {
-        public virtual ICollection<Category> Categories { get; set; }
-        public Category Category { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
-        public Order Order { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-        public OrderDetail OrderDetail { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
-        public Product Product { get; set; }
-        public virtual ICollection<ProductImage> ProductImages { get; set; }
-        public ProductImage ProductImage { get; set; }
-        public virtual ICollection<Rating> Ratings { get; set; }
-        public Rating Rating { get; set; }
-        public virtual ICollection<TransactStatus> TransactStatuses { get; set; }
-        public TransactStatus TransactStatus { get; set; }
+        public virtual ICollection<CategoryDTO> Categories { get; set; }
+        public CategoryDTO Category { get; set; }
+        public virtual ICollection<OrderDTO> Orders { get; set; }
+        public OrderDTO Order { get; set; }
+        public virtual ICollection<OrderDetailDTO> OrderDetails { get; set; }
+        public OrderDetailDTO OrderDetail { get; set; }
+        public virtual ICollection<ProductDTO> Products { get; set; }
+        public ProductDTO Product { get; set; }
+        public virtual ICollection<ProductImageDTO> ProductImages { get; set; }
+        public ProductImageDTO ProductImage { get; set; }
+        public virtual ICollection<RatingDTO> Ratings { get; set; }
+        public RatingDTO Rating { get; set; }
+        public virtual ICollection<TransactStatusDTO> TransactStatuses { get; set; }
+        public TransactStatusDTO TransactStatus { get; set; }
 
     }
 }

@@ -42,7 +42,7 @@ const AppRoutes = [
   {
     path: '/addproduct',
     element:<AddProduct/>
-  }
+  },
 ];
 
 export default AppRoutes;

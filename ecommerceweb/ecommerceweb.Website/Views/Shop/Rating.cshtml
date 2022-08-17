@@ -1,0 +1,89 @@
+﻿@using ecommerceweb.Website.Models
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@model MultiModels
+
+@{
+    ViewData["Title"] = "Detail";
+    var ratingSum = ViewBag.RatingSum;
+    var ratingCount = ViewBag.RatingCount;
+
+    decimal rating = 0;
+    if (ratingCount > 0)
+    {
+        rating = (ratingSum / ratingCount);
+    }
+    var totalRating = decimal.Parse(rating.ToString());
+}
+
+<div>
+    <div class="banner">
+        <h1> <i class="fa-solid fa-seedling navbar-extra-icon"></i>@Model.Product.ProductName</h1>
+    </div>
+    <div class="product-detail-section">
+        <div class="product-img">
+            @if (!Model.Product.ProductImages.Any())
+            {
+                <img src="/assets/images/product/medium-size/1-5-270x300.jpg" />
+            }
+            else{
+                @*<img src="@Model.Product.ProductImages[0].ImageURL/@Model.Product.ProductImages[0].ProductImageId" />*@
+                <img src="/assets/images/product/medium-size/1-5-270x300.jpg" />
+            }
+        </div>
+        <div class="product-detail-text">
+            <div>
+                <h1 class="product-detail-name">@Model.Product.ProductName</h1>
+                <p class="product-detail-price">@Model.Product.Price</p>
+                <p>@totalRating <i class="fa-solid fa-star"></i></p>
+                <p class="product-detail-description">@Model.Product.Description</p>
+            </div>
+            <form method="post" asp-action="Rating" >
+            <table>
+                <div class="rating-input">
+                    <select name="RatingNumber" id="">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5" selected>5</option>
+                    </select>
+                    <input type="hidden" name="ProductId" value="@Model.Product.ProductId"/>
+                    <p>&nbsp <i class="fa-solid fa-star"></i></p>
+                </div>
+            </table>
+
+            
+            <div class="product-detail-buttons">
+            <button class="button">RATE</button>
+            <a class="button" asp-controller="Shop" asp-action="Detail" asp-route-id="@Model.Product.ProductId">CANCEL</a>
+            
+            </div>
+            </form>
+        </div>
+    </div>
+    <div class="rating-list-section">
+        <h2>REVIEWS</h2>
+        <h3>@ratingCount Kiwis</h3>
+        <div class="rating-list-items">
+             @if (Model != null)
+            {
+                @foreach (var item in Model.Ratings)
+                {
+                    <div class="rating-list-item">        
+                        <div class="rating-left">
+                    @*<img src="/Images/User.png"/>*@
+                    </div>
+                    <div class="rating-right">
+                        <p>@item.Stars <i class="fa-solid fa-star"></i></p>
+                        <p class="rating-right-name">adkfkgld</p>
+                        <p>dhofhosdjorwejfhshgdafhggjxjfpkgkgsahgdajfrjo.</p>
+                    </div>
+                    </div>
+                }
+            }
+        </div>
+        <div class="rating-list-button">
+        <button class="button">SEE MORE</button>
+        </div>
+    </div>
+</div>

@@ -23,9 +23,12 @@ namespace ecommerceweb.Website.Controllers
         private readonly ILogger<HomeController> _logger;
         private IAuthenticateService _service;
 
-        public HomeController(IAuthenticateService service)
+        public HomeController()
         {
-            _service = service;
+            // _service = service;
+            ViewData["title"] = "HOme";
+            ViewData["Message"] = "welcome to ASp";
+           
         }
 
         //public IActionResult Login() => View();
@@ -84,9 +87,9 @@ namespace ecommerceweb.Website.Controllers
         }
 
         /*public HomeController(ILogger<HomeController> logger)
-{
-    _logger = logger;
-}*/
+        {
+            _logger = logger;
+        }*/
 
         /* public IActionResult Index()
             {

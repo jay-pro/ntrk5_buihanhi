@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ecommerceweb.SharedModel.ProductImageDTO>
+
+@{
+    ViewData["Title"] = "Image Edit";
+}
+
+<h2>Images Edit</h2>
+
+<form method="post" asp-action="Edit">
+    <table>
+        @if(Model!=null){
+            @foreach (var ProductImage in Model)
+            {
+                <tr>            
+                <td>Product ID </td>
+                <td><input type="text" name="ProductId" value="@ProductImage.ProductId"/></td>
+                </tr>
+                <tr>
+                    <td>Image URL</td>
+                    <td><input type="text" name="ImageUrl" value="@ProductImage.ImageUrl"/></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Edit"/></td>
+                </tr>
+            }
+        }
+
+    </table>
+
+</form>

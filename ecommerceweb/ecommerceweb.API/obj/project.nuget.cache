@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "83itIHCIeR0n8NuYt5k4SlzYyvsOIloa3KlAHOxPfbAQe9tlKVlyWgZFeThCqRY/YM2hCNC4n1fBGyroMHsSyQ==",
+  "dgSpecHash": "2ugXLurZpE/dqPa87DSPQQuxnzc8jMPAzOGNquLdVzOBCa1YDHjEpwTRsQNQtDrQjxIXzvMgSkWDMd1YgoTz9g==",
   "success": true,
   "projectFilePath": "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.API\\ecommerceweb.API.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.aspnetcore.responsecaching.abstractions\\2.2.0\\microsoft.aspnetcore.responsecaching.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.aspnetcore.routing\\2.2.0\\microsoft.aspnetcore.routing.2.2.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.aspnetcore.routing.abstractions\\2.2.0\\microsoft.aspnetcore.routing.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\buiha\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\6.0.6\\microsoft.aspnetcore.spaproxy.6.0.6.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
@@ -137,7 +138,8 @@
     "C:\\Users\\buiha\\.nuget\\packages\\system.threading\\4.0.11\\system.threading.4.0.11.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\system.threading.tasks\\4.0.11\\system.threading.tasks.4.0.11.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
-    "C:\\Users\\buiha\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+    "C:\\Users\\buiha\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
+    "C:\\Users\\buiha\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.8\\microsoft.netcore.app.ref.6.0.8.nupkg.sha512"
   ],
   "logs": [
     {

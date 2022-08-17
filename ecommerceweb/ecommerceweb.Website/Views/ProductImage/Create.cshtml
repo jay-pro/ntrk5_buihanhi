@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ecommerceweb.API.Models.ProductImage>
+
+@{
+    ViewData["Title"] = "Create Product Image";
+}
+
+<h2>Images Create</h2>
+
+<form method="post" asp-action="Create">
+    <table>
+        <tr>
+            <td>Product ID</td>
+
+            <td><input type="text" name="ProductId"/></td>
+        </tr>
+        <tr>
+            <td>Image URL</td>
+            <td><input type="text" name="ImageUrl"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Create"/></td>
+        </tr>
+    </table>
+
+</form>

@@ -6,9 +6,9 @@ namespace ecommerceweb.API.Data
 {
     public class APIDbContext : DbContext
     {
-        /*public APIDbContext()
+        public APIDbContext()
         {
-        }*/
+        }
 
         public APIDbContext(DbContextOptions<APIDbContext> options) : base(options)
         {

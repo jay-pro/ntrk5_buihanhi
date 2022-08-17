@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LBtyQjQJnWELGpViVk2IOfnWL9cncnn9l/wzCv4KP7rx5KxcKhbPVHGjRqT08CGx8jOd4mXh5HD0zG4qc+RJRw==",
+  "dgSpecHash": "wWe/wUE3fe7BY/Ml82HVtntj6jqU8PRckG7pjSvpNHZ3ymLBjsFEWGjDakuwe4d40dPS3c+zSlmHT5e3UsuF6A==",
   "success": true,
   "projectFilePath": "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.Domain\\ecommerceweb.Domain.csproj",
   "expectedPackageFiles": [
@@ -61,7 +61,8 @@
     "C:\\Users\\buiha\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\buiha\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+    "C:\\Users\\buiha\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
+    "C:\\Users\\buiha\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.8\\microsoft.netcore.app.ref.6.0.8.nupkg.sha512"
   ],
   "logs": []
 }

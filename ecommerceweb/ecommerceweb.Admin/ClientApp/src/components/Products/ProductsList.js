@@ -49,7 +49,7 @@ const ProductsList = (props) => {
     setCurrentIndex(index);
   };
 
-  const removeAllProducts = () => {
+  /* const removeAllProducts = () => {
     ProductService.removeAll()
       .then(response => {
         console.log(response.data);
@@ -58,9 +58,9 @@ const ProductsList = (props) => {
       .catch(e => {
         console.log(e);
       });
-  };
+  }; */
 
-  const searchByName = () => {
+  /* const searchByName = () => {
     ProductService.searchByName(searchName)
       .then(response => {
         setProducts(response.data);
@@ -69,22 +69,24 @@ const ProductsList = (props) => {
       .catch(e => {
         console.log(e);
       });
-  };
+  }; */
 
   const openProduct = (rowIndex) => {
-    /* const productId = productsRef.current[rowIndex].productId;
-    props.history.push("/Products/" + productId); */
+    const productId = productsRef.current[rowIndex].productId;
+    props.history.push("/Products/" + productId);
   };
 
   const deleteProduct = (rowIndex) => {
     //const productId = productsRef.current[rowIndex].productId;
     console.log(rowIndex);
+    //console.log(productId);
     ProductService.remove(rowIndex)
       .then((response) => {
         //props.history.push("/Categories/");
-        let newProducts = [...productsRef.current];
-        newProducts.splice(rowIndex, 1);
-        setProducts(newProducts);
+        //let newProducts = [...productsRef.current];
+        //newProducts.splice(rowIndex, 1);
+        //setProducts(newProducts);
+        console.log(response.data);
       })
       .catch((e) => {
         console.log(e);
@@ -118,13 +120,10 @@ const ProductsList = (props) => {
         Header: "Discount",
         accessor: "discount",
       },
-      /* {
-        Header: "Status",
-        accessor: "published",
-        Cell: (props) => {
-          return props.value ? "true" : "false";
-        },
-      }, */
+      {
+        Header: "UnitsInStock",
+        accessor: "unitsInStock",
+      },
       {
         Header: "Actions",
         accessor: "actions",
@@ -132,12 +131,12 @@ const ProductsList = (props) => {
           const rowIdx = props.row.original.productId;
           return (
             <div>
-              <Link to={`${rowIdx}`}>
+              {/* <Link to={`${rowIdx}`}>
                 <i className="far fa-edit action mr-2"></i>
-              </Link>
-              {/* <span onClick={() => openProduct(rowIdx)}>
+              </Link> */}
+              <span onClick={() => openProduct(rowIdx)}>
                 <i className="far fa-edit action mr-2"></i>
-              </span> */}
+              </span>
               <span onClick={() => deleteProduct(rowIdx)}>
                 <i className="fas fa-trash action"></i>
               </span>
@@ -171,7 +170,7 @@ const ProductsList = (props) => {
             value={searchName}
             onChange={onChangeSearchName}
           />
-          <div className="input-group-append">
+          {/* <div className="input-group-append">
             <button
               className="btn btn-outline-secondary"
               type="button"
@@ -179,7 +178,7 @@ const ProductsList = (props) => {
             >
               Search
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -215,11 +214,11 @@ const ProductsList = (props) => {
           </tbody>
         </table>
       </div>
-      <div>
+      {/* <div>
         <button className="m-3 btn btn-sm btn-danger" onClick={removeAllProducts}>
             Remove All
         </button>
-      </div>      
+      </div> */}      
     </div>
   );
 };

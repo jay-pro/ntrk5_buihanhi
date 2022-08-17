@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ecommerceweb.SharedModel.ProductImageDTO>
+
+@{
+    ViewData["Title"] = "Image";
+}
+
+<h2>Images</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ProductImageId
+            </th>
+            <th>
+                ProductId
+            </th>
+            <th>
+                ImageUrl
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.ProductImageId
+                </td>
+                <td>
+                    @item.ProductId
+                </td>
+                <td>
+                    @item.ImageUrl
+                </td>
+                <td>    
+                    <a asp-action="Edit" asp-route-id="@item.ProductImageId">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.ProductImageId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

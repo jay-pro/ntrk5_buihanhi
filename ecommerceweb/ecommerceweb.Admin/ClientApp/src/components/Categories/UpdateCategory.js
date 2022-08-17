@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
+/* import React, { useState, useEffect, useMemo, useRef } from "react";
 import CategoryService from '../../services/CategoryService';
 import Modal from 'react-modal';
 import axios from 'axios';
 
-const UpdateCategory = (CategoryId) => {
+
+const UpdateCategory = (CategoryId = 1) => {
+  
   console.log(CategoryId);
-  /* const constructor = (props) => {
+  const constructor = (props) => {
     super(props);
     this.state = {
       modalIsOpen: false,
@@ -59,14 +61,13 @@ const UpdateCategory = (CategoryId) => {
     this.setState({
       modalIsOpen: false
     }); 
-  };*/
+  }
 
   
   return(
     <div>
-      <h1>hiiii</h1>
       
-      {/* <ul>
+      <ul>
         {this.stat.news.map(category => (
           <li key={category.categoryId}>
             <h2>CategoryName: {category.categoryName}</h2>
@@ -218,18 +219,18 @@ const UpdateCategory = (CategoryId) => {
           </div>
         </div>
         <button type="submit" className="btn btn-success">Edit</button>
-      </div>*/}
+      </div>
     </div> 
   );
 };
 
-export default UpdateCategory;
+export default UpdateCategory; */
 
-/* import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import CategoryService from "../../services/CategoryService";
 
-const Category = (props) => {
+const UpdateCategory = (props) => {
   const { CategoryId }= useParams();
   let navigate = useNavigate();
 
@@ -526,5 +527,4 @@ const Category = (props) => {
     </div>
   );
 };
-export default Category;
- */
+export default UpdateCategory;

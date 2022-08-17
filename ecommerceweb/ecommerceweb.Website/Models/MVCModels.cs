@@ -4,7 +4,7 @@ namespace ecommerceweb.Website.Models
 {
     public class MVCModels
     {
-        public List<Category> Categories { get; set; }
+        public List<CategoryDTO> Categories { get; set; }
         public CategoryDTO Category { get; set; }
 
         //public List<Order> Orders { get; set; }
@@ -12,13 +12,13 @@ namespace ecommerceweb.Website.Models
         //public List<OrderDetail> OrderDetails { get; set; }
         //public OrderDetailDTO OrderDetail { get; set; }
 
-        public List<Product> Products { get; set; }
+        public List<ProductDTO> Products { get; set; }
         public ProductDTO Product { get; set; }
 
-        public List<ProductImage> ProductImages { get; set; }
+        public List<ProductImageDTO> ProductImages { get; set; }
         public ProductImageDTO ProductImage { get; set; }
 
-        public List<Rating> Ratings { get; set; }
+        public List<RatingDTO> Ratings { get; set; }
         public RatingDTO Rating { get; set; }
 
         //public List<TransactStatus> TransactStatuses { get; set; }

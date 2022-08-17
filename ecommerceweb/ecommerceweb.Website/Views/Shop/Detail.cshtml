@@ -1,0 +1,78 @@
+﻿@using ecommerceweb.Website.Models
+@model MultiModels
+
+@{
+    ViewData["Title"] = "Detail";
+    var ratingSum = ViewBag.RatingSum;
+    var ratingCount = ViewBag.RatingCount;
+
+    decimal rating = 0;
+    if (ratingCount > 0)
+    {
+        rating = (ratingSum / ratingCount);
+    }
+    var totalRating = decimal.Parse(rating.ToString());
+}
+
+<div class="product-detail-page">
+    <div class="banner">
+        <h1> <i class="fa-solid fa-seedling navbar-extra-icon"></i>@Model.Product.ProductName</h1>
+    </div>
+    <div class="product-detail-section">
+        <div class="product-img">
+            @if (!Model.Product.ProductImages.Any())
+            {
+                <img src="/assets/images/product/medium-size/1-5-270x300.jpg" />
+            }
+            else{
+                @*<img src="@Model.Product.ProductImages[0].ImageURL/@Model.Product.ProductImages[0].ProductImageId" />*@
+                <img src="/assets/images/product/medium-size/1-5-270x300.jpg" />
+            }
+        </div>
+        <div class="product-detail-text">
+            <div>
+                <h1 class="product-detail-name">@Model.Product.ProductName</h1>
+                <p class="product-detail-price">@Model.Product.Price</p>
+                <p>@totalRating <i class="fa-solid fa-star"></i></p>
+                <p class="product-detail-description">@Model.Product.Description</p>
+            </div>
+            <div class="product-detail-buttons">
+             
+            <a class="button">ADD TO CART</a>
+            <a class="button" asp-controller="Shop" asp-action="Rating" asp-route-id="@Model.Product.ProductId">RATE</a>
+            </div>
+        </div>
+    </div> 
+    <div class="homepage-best-seller">
+        <div class="homepage-best-seller-text">
+            <h2 >power of nature -</h2>
+            <h1>Best Sellers Products</h1>
+        </div>
+        <div class="homepage-products">
+            <div class="best-seller-row">
+                @if (Model != null)
+                {
+                    @foreach (var item in Model.Products)
+                    {
+                        <div class="product">
+                            @if (!item.ProductImages.Any())
+                            {
+                               <img src="/assets/images/product/medium-size/1-5-270x300.jpg" />
+                            }
+                            else{
+                             @*<img src="@item.ProductImages[0].ImageURL/@item.ProductImages[0].ProductImageId" />*@
+                             <img src="/assets/images/product/medium-size/1-5-270x300.jpg" />
+                            }
+                            <p class="product-name">@item.ProductName</p>
+                            <p>@item.Price</p>
+                            <div class="product-btns">
+                                <a class="button" asp-controller="Shop" asp-action="Detail" asp-route-id="@item.ProductId">SEE DETAIL</a>
+                                <a class="button">ADD TO CART</a>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>

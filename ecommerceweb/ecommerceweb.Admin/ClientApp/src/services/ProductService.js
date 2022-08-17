@@ -1,44 +1,47 @@
-import http from "../http-common";
+//import http from "../http-common";
+import axios from "axios";
+
+const baseUrl = "https://localhost:44303/api";
 
 //Get All Products
 const getAll = () => {
-  return http.get("/Products");
+  return axios.get(baseUrl + "/Products");
 };
 
 //Get A Product Details
 const get = ProductId => {
-  return http.get(`/Products/${ProductId}`);
+  return axios.get(baseUrl + `/Products/${ProductId}`);
 };
 
 //Create A Product
 const create = data => {
-  return http.post("/Products", data);
+  return axios.post(baseUrl + "/Products", data);
 };
 
 //Update A Product
 const update = (ProductId, data) => {
-  return http.put(`/Products/${ProductId}`, data);
+  return axios.put(baseUrl + `/Products/${ProductId}`, data);
 };
 
 //Delete A Product
 const remove = ProductId => {
-  return http.delete(`/Products/${ProductId}`);
+  return axios.delete(baseUrl + `/Products/${ProductId}`);
 };
 
 //Delete All Products
-const removeAll = () => {
-  return http.delete(`/Products`);
-};
+/* const removeAll = () => {
+  return axios.delete(`/Products`);
+}; */
 
 //Search A Product With Name
-const searchByName = ProductName => {
-  return http.get(`/Products?title=${ProductName}`);
-};
+/* const searchByName = ProductName => {
+  return axios.get(`/Products?title=${ProductName}`);
+}; */
 
 //Filter Products With CategoryId
-const filterByCategoryId = CategoryId => {
-    return http.get(`/Products?title=${CategoryId}`);
-  };
+/* const filterByCategoryId = CategoryId => {
+    return axios.get(`/Products?title=${CategoryId}`);
+}; */
 
 const ProductService = {
   getAll,
@@ -46,8 +49,8 @@ const ProductService = {
   create,
   update,
   remove,
-  removeAll,
+  /* removeAll,
   searchByName,
-  filterByCategoryId
+  filterByCategoryId */
 };
 export default ProductService;

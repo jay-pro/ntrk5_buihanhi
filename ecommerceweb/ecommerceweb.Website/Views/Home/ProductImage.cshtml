@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "ProductImage";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    ProductImageId
+                </th>
+                <th>
+                    ProductId
+                </th>
+                <th>
+                    ImageUrl
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@*@foreach (var item in Model) {*@
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                1
+            </td>
+            <td>
+                url
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="">Edit</a> |
+                <a asp-action="Details" asp-route-id="">Details</a> |
+                <a asp-action="Delete" asp-route-id="">Delete</a>
+            </td>
+        </tr>
+@*}*@
+    </tbody>
+</table>

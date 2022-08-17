@@ -1,4 +1,5 @@
-﻿using ecommerceweb.Website.Models;
+﻿using ecommerceweb.API.Models;
+using ecommerceweb.Website.Models;
 using ecommerceweb.Website.Models.Context;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

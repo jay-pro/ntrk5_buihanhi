@@ -7,7 +7,14 @@ const getAll = () => {
 
 //Get A Category Details
 const get = CategoryId => {
-  return http.get(`/Categories/${CategoryId}`);
+  return http.get(`/Categories/${CategoryId}`)
+             .then((res) => {
+                console.log("show data: ",res.data)
+                return res.data
+              })
+             .catch((error) => {
+                console.log("errorr: " + error)
+              });
 };
 
 //Create A Category
@@ -22,7 +29,14 @@ const update = (CategoryId, data) => {
 
 //Delete A Category
 const remove = CategoryId => {
-  return http.delete(`/Categories/${CategoryId}`);
+  return http.delete(`/Categories/${CategoryId}`)
+              .then((res) => {
+                console.log("show data: ",res.data)
+                return res.data
+              })
+              .catch((error) => {
+                  console.log("errorr: " + error)
+                });
 };
 
 //Delete All Categories

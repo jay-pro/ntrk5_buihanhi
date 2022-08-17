@@ -80,7 +80,17 @@
       "ProjectGuid": "75d7e4fa-6185-447f-aaf3-966793850798",
       "DisplayName": "nhap",
       "ColorIndex": 14
+    },
+    "6fdda490-9e4c-4789-aa72-8076c1e304d9": {
+      "ProjectGuid": "6fdda490-9e4c-4789-aa72-8076c1e304d9",
+      "DisplayName": "CustomerSite",
+      "ColorIndex": 15
+    },
+    "f1ae1155-3815-4505-ae26-7434f1b3d420": {
+      "ProjectGuid": "f1ae1155-3815-4505-ae26-7434f1b3d420",
+      "DisplayName": "CustomerSite",
+      "ColorIndex": 0
     }
   },
-  "NextColorIndex": 15
+  "NextColorIndex": 1
 }

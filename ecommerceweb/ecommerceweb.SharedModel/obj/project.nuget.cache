@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ilZRE2cynxs9/qWI9D56+pxjNbkq8fOmmZ8UI7Wl1xu18zAbJRCltNimSF7jPSU0QsX/I8KIsq6rQQN+LRsxCQ==",
+  "dgSpecHash": "CRTN/pag8rDaRFPWxEtsJIEKhZrdkLSeuwN+1bBMdOj8ainQitjnjDf0oB7W4N/INo0msz6RyZHKHNq9lVnZfA==",
   "success": true,
   "projectFilePath": "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.SharedModel\\ecommerceweb.SharedModel.csproj",
   "expectedPackageFiles": [
@@ -125,7 +125,8 @@
     "C:\\Users\\buiha\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
     "C:\\Users\\buiha\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
-    "C:\\Users\\buiha\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512"
+    "C:\\Users\\buiha\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
+    "C:\\Users\\buiha\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.8\\microsoft.netcore.app.ref.6.0.8.nupkg.sha512"
   ],
   "logs": []
 }

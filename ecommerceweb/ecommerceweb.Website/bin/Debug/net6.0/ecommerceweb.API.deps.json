@@ -19,6 +19,8 @@
           "ServiceStack": "6.1.0",
           "Swashbuckle.AspNetCore": "6.2.3",
           "Swashbuckle.AspNetCore.Swagger": "6.3.1",
+          "ecommerceweb.Admin": "1.0.0",
+          "ecommerceweb.Domain": "1.0.0",
           "ecommerceweb.SharedModel": "1.0.0"
         },
         "runtime": {
@@ -244,6 +246,14 @@
       "Microsoft.AspNetCore.Routing.Abstractions/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0"
+        }
+      },
+      "Microsoft.AspNetCore.SpaProxy/6.0.6": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.SpaProxy.dll": {
+            "assemblyVersion": "6.0.6.0",
+            "fileVersion": "6.0.622.26805"
+          }
         }
       },
       "Microsoft.AspNetCore.WebUtilities/2.2.0": {
@@ -1221,6 +1231,16 @@
           }
         }
       },
+      "ecommerceweb.Admin/1.0.0": {
+        "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
+          "Microsoft.AspNetCore.SpaProxy": "6.0.6",
+          "ecommerceweb.SharedModel": "1.0.0"
+        },
+        "runtime": {
+          "ecommerceweb.Admin.dll": {}
+        }
+      },
       "ecommerceweb.Domain/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
@@ -1437,6 +1457,13 @@
       "sha512": "sha512-lRRaPN7jDlUCVCp9i0W+PB0trFaKB0bgMJD7hEJS9Uo4R9MXaMC8X2tJhPLmeVE3SGDdYI4QNKdVmhNvMJGgPQ==",
       "path": "microsoft.aspnetcore.routing.abstractions/2.2.0",
       "hashPath": "microsoft.aspnetcore.routing.abstractions.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.SpaProxy/6.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0vR40fXqt0FLWHySL0xE7+F4n+hj89+NcQ6rvCyZKq2J9e+s61EynubSiWw5KyNZKhSmCYPZrq5lQKarAkrprg==",
+      "path": "microsoft.aspnetcore.spaproxy/6.0.6",
+      "hashPath": "microsoft.aspnetcore.spaproxy.6.0.6.nupkg.sha512"
     },
     "Microsoft.AspNetCore.WebUtilities/2.2.0": {
       "type": "package",
@@ -2200,6 +2227,11 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "ecommerceweb.Admin/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ecommerceweb.Domain/1.0.0": {
       "type": "project",

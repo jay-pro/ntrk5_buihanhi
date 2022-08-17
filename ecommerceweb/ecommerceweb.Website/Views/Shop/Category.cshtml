@@ -1,0 +1,122 @@
+﻿@using ecommerceweb.Website.Models
+@model MultiModels
+@{
+    ViewData["Title"] = "ShopPage";
+}
+
+<div>
+    <div class="banner">
+        <h1> <i class="fa-solid fa-seedling navbar-extra-icon"></i> SHOP</h1>
+    </div>
+    <div class="shop-section">
+        <div class="product-side">
+           @if (Model != null)
+                {
+                    @foreach (var item in Model.Products)
+                    {
+                        <div class="product">
+                            @if (!item.ProductImages.Any())
+                            {
+                                <img src="/assets/images/product/medium-size/1-5-270x300.jpg" />
+                            }
+                            else{
+                             @*<img src="@item.ProductImages[0].ImageUrl/@item.ProductImages[0].Id" />*@
+                             <img src="/assets/images/product/medium-size/1-5-270x300.jpg" />
+                            }
+                            <p class="product-name">@item.ProductName</p>
+                            <p>@item.Price</p>
+                            <div class="product-btns">
+                                <a class="button" asp-controller="Shop" asp-action="Detail" asp-route-id="@item.ProductId">SEE DETAIL</a>
+                                <a class="button">ADD TO CART</a>
+                            </div>
+                        </div>
+                    }
+                }
+                <button class="button" id="load-more-button" onclick="load()">Show more</button>
+       
+        </div>
+        <div class="sort-side">
+            <h3> &nbsp Categories</h3>
+            @if (Model != null)
+            {
+                @foreach (var item in Model.Categories)
+                    {
+                        <li><a class="" asp-area="" asp-controller="Shop" asp-action="Category" asp-route-id="@item.CategoryId">@item.CategoryName <span class="subtext">(@item.Products.Count())</span></a> </li>
+                    }
+            }
+        </div>
+    </div>
+</div>
+
+@*<div>
+    <div class="banner">
+        <h1> <i class="fa-solid fa-seedling navbar-extra-icon"></i> @Model.Category.CategoryName</h1>
+    </div>
+    <div class="shop-section">
+        <div class="product-side">
+           @if (Model != null)
+                {
+                    @foreach (var item in Model.Category.Products)
+                    {
+                        <div class="product">
+                            @if (!item.ProductImages.Any())
+                            {
+                                <img src="/assets/images/product/medium-size/1-5-270x300.jpg" />
+                            }
+                            else{
+                            <img src="@item.ProductImages[0].ImageURL/@item.ProductImages[0].Id" />
+                            }
+                            <p class="product-name">@item.ProductName</p>
+                            <p>@item.Price</p>
+                            <div class="product-btns">
+                                <a class="button" asp-controller="Shop" asp-action="Detail" asp-route-id="@item.ProductId">SEE DETAIL</a>
+                                <a class="button">ADD TO CART</a>
+                            </div>
+                        </div>
+                    }
+                }
+                <button class="button" id="load-more-button" onclick="load()">Show more</button>
+       
+        </div>
+        <div class="sort-side">
+            <h3> &nbsp Categories</h3>
+            @if (Model != null)
+            {
+                @foreach (var item in Model.Categories)
+                    {
+                        <li><a class="" asp-area="" asp-controller="Shop" asp-action="Category" asp-route-id="@item.CategoryId">@item.CategoryName</a> </li>
+                    }
+            }
+        </div>
+    </div>
+</div>*@
+
+
+<script>
+    let loadButton = document.getElementById("load-more-button");
+    let product = document.getElementsByClassName("product")
+    let currentItem = 9;
+    if (currentItem >= product.length) {
+        loadButton.style.display = 'none';
+    }
+    load =()=>{
+        if (product.length - currentItem >= 3) {
+            for (let i = currentItem; i < currentItem + 3; i++) {
+                product[i].style.display = 'flex';
+            }
+            currentItem += 3;
+            if (currentItem >= product.length) {
+                loadButton.style.display = 'none';
+            }
+        }
+        if (product.length - currentItem < 3){
+            for (let i = currentItem; i < product.length; i++) {
+                product[i].style.display = 'flex';
+            }
+            currentItem += 3;
+            if (currentItem >= product.length) {
+                loadButton.style.display = 'none';
+            }
+        } 
+    }
+</script>

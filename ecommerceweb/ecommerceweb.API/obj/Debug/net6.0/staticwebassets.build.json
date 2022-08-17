@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "3FROHHHdQnROFr1dkuOWgrfKiQWkULxttFd4CuAcwPc=",
+  "Hash": "Ip7pnGrnrnzgy7eHNQpCtYoYIh4W4t70x7NsTvEOZEo=",
   "Source": "ecommerceweb.API",
   "BasePath": "_content/ecommerceweb.API",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\NTRK(5)\\Assignments\\ntrk5_buihanhi\\ecommerceweb\\ecommerceweb.Admin\\ecommerceweb.Admin.csproj",
+      "Version": 2,
+      "Source": "ecommerceweb.Admin",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
   "DiscoveryPatterns": [],
   "Assets": []
 }
